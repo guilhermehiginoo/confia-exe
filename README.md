@@ -18,3 +18,7 @@ Abra o `index.html` no navegador, ou sirva a pasta:
 ```
 python3 -m http.server 8000
 ```
+
+## Licença
+
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Texto completo em [LICENSE](LICENSE).
