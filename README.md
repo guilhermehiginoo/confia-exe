@@ -21,7 +21,7 @@ Promover a **Cultura Digital**, alinhada à BNCC (habilidade **EF08CO10**), dese
 
 ## Contexto acadêmico
 
-Trabalho desenvolvido para a disciplina **IMD0530 - Software Livre, Educação e Cultura - T01 (2026.2)**, do Instituto Metrópole Digital (IMD/UFRN), ministrada pelo professor **Dennys Leite Maia**.
+Trabalho desenvolvido para a disciplina **IMD0530 - Software Livre, Educação e Cultura**, do Instituto Metrópole Digital (IMD/UFRN), ministrada pelo professor **Dennys Leite Maia**.
 
 ## Estrutura
 
