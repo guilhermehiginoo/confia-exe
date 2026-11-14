@@ -1,0 +1,288 @@
+/* ==========================================================
+   1. TOKENS DO DESIGN SYSTEM (cores tiradas dos protótipos)
+   ========================================================== */
+:root {
+  --marrom-900: #1d0b02;
+  --marrom-800: #2f1403;   /* fundo das telas */
+  --marrom-600: #5a2d10;
+  --laranja-500: #ff7a00;  /* botões */
+  --laranja-400: #f79034;  /* campos */
+  --laranja-300: #e3a068;  /* aba "Instruções" */
+  --creme: #fff3e6;
+  --creme-suave: #e9d3bf;
+  --fraca: #ff6b5e;
+  --media: #ffc233;
+  --forte: #4cd37b;
+  --raio: 22px;
+  --fonte: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ==========================================================
+   2. BASE
+   ========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--creme);
+  line-height: 1.45;
+  background:
+    radial-gradient(900px 600px at 15% 10%, rgba(255, 122, 0, .28), transparent 60%),
+    radial-gradient(800px 600px at 90% 95%, rgba(227, 160, 104, .22), transparent 60%),
+    linear-gradient(160deg, var(--marrom-900), var(--marrom-800) 55%, #4a210a);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(255, 122, 0, .55);
+}
+
+button { font: inherit; cursor: pointer; }
+
+.tela {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+/* ==========================================================
+   3. ABA "INSTRUÇÕES" (canto superior esquerdo, como no protótipo)
+   ========================================================== */
+.instrucoes {
+  align-self: flex-start;
+  margin: -16px 0 0 -16px;   /* cola no canto */
+}
+.instrucoes summary {
+  list-style: none;
+  background: var(--laranja-300);
+  color: #1d0b02;
+  font-size: 1.25rem;
+  padding: 14px 40px 22px 20px;
+  border-bottom-right-radius: 28px;
+  border-right: 2px solid var(--laranja-500);
+  border-bottom: 2px solid var(--laranja-500);
+  cursor: pointer;
+}
+.instrucoes summary::-webkit-details-marker { display: none; }
+.instrucoes[open] summary { border-bottom-right-radius: 0; }
+.instrucoes-corpo {
+  position: relative;
+  z-index: 5;
+  background: var(--laranja-300);
+  color: #1d0b02;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 4px 20px 18px;
+  border-bottom-right-radius: 28px;
+  font-size: .95rem;
+}
+.instrucoes-corpo p { margin: .5em 0; }
+
+/* ==========================================================
+   4. RELÓGIO + DATA (estilo tela de bloqueio)
+   ========================================================== */
+.centro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 8px 0;
+}
+.relogio { text-align: center; }
+.relogio-hora {
+  font-size: clamp(3.6rem, 12vw, 6.5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+.relogio-data {
+  font-size: clamp(1.05rem, 3vw, 1.5rem);
+  color: var(--creme-suave);
+  text-transform: capitalize;
+  margin-top: 6px;
+}
+
+/* ==========================================================
+   5. PAINEL 
+   ========================================================== */
+.painel {
+  width: min(770px, 100%);
+  padding: 28px 24px 24px;
+  border-radius: 28px;
+  background: rgba(255, 243, 230, .10);
+  border: 1px solid rgba(255, 243, 230, .28);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .painel { background: rgba(47, 20, 3, .92); }
+}
+
+.avatar {
+  width: 96px; height: 96px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(145deg, var(--laranja-300), var(--marrom-600));
+  border: 3px solid rgba(255, 243, 230, .6);
+}
+.avatar svg { width: 58px; height: 58px; }
+
+.usuario { margin: 0; text-align: center; font-size: 1.35rem; font-weight: 600; }
+.titulo-painel { margin: 2px 0 18px; text-align: center; font-size: 1.05rem; color: var(--creme-suave); font-weight: 400; }
+
+/* ==========================================================
+   6. CAMPOS (pílulas laranja, como no protótipo)
+   ========================================================== */
+.campo { margin-bottom: 14px; }
+.campo label { display: block; font-size: .92rem; margin: 0 0 6px 6px; font-weight: 600; }
+
+.campo-linha {
+  display: flex; align-items: center;
+  background: var(--laranja-400);
+  border: 2px solid var(--laranja-500);
+  border-radius: 999px;
+  padding-right: 6px;
+}
+.campo-linha:focus-within { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 6px rgba(255,122,0,.55); }
+.campo-linha.erro { border-color: #fff; background: #f4a05a; }
+
+.campo-linha input {
+  flex: 1; min-width: 0;
+  background: transparent; border: 0; outline: 0;
+  padding: 12px 8px 12px 18px;
+  font: inherit; font-size: 1.05rem;
+  color: #1d0b02;
+}
+.campo-linha input::placeholder { color: #4a210a; opacity: .8; }
+
+.olho {
+  flex: none; width: 40px; height: 40px;
+  border: 0; border-radius: 50%;
+  background: transparent; color: #1d0b02;
+  display: grid; place-items: center;
+}
+.olho:hover { background: rgba(29, 11, 2, .12); }
+.olho svg { width: 22px; height: 22px; }
+.olho .riscado { display: none; }
+.olho[aria-pressed="true"] .riscado { display: block; }
+
+.msg-campo { min-height: 1.3em; margin: 6px 0 0 8px; font-size: .88rem; color: #ffd9b8; }
+
+/* ==========================================================
+   7. MEDIDOR DE FORÇA
+   ========================================================== */
+.medidor { margin: 4px 0 14px; }
+.medidor-topo { display: flex; justify-content: space-between; font-size: .92rem; margin-bottom: 6px; }
+.barra { height: 10px; border-radius: 999px; background: rgba(255,243,230,.18); overflow: hidden; }
+.barra-preench {
+  height: 100%; width: 0%;
+  border-radius: 999px;
+  background: var(--fraca);
+  transition: width .25s ease, background-color .25s ease;
+}
+.medidor[data-nivel="fraca"] .barra-preench { background: var(--fraca); }
+.medidor[data-nivel="media"] .barra-preench { background: var(--media); }
+.medidor[data-nivel="forte"] .barra-preench { background: var(--forte); }
+
+/* ==========================================================
+   8. CHECKLIST
+   ========================================================== */
+.requisitos { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 6px; font-size: .92rem; }
+.requisitos li { display: flex; gap: 10px; align-items: flex-start; color: var(--creme-suave); }
+.requisitos .marca {
+  flex: none; width: 20px; height: 20px; margin-top: 1px;
+  border-radius: 50%;
+  border: 2px solid var(--creme-suave);
+  display: grid; place-items: center;
+  font-size: .8rem; font-weight: 700; line-height: 1;
+  color: transparent;
+}
+.requisitos li.ok { color: #fff; }
+.requisitos li.ok .marca { background: var(--forte); border-color: var(--forte); color: #0b2a14; }
+
+.proximo-passo { min-height: 2.6em; margin: 4px 0 12px; font-size: .92rem; color: #ffe2c4; }
+
+/* ==========================================================
+   9. BOTÃO ENTRAR
+   ========================================================== */
+.acoes { display: flex; justify-content: flex-end; }
+.acoes-envoltorio { display: inline-block; border-radius: 999px; }
+.entrar {
+  min-width: 140px; padding: 12px 28px;
+  border: 2px solid var(--laranja-500);
+  border-radius: 999px;
+  background: var(--laranja-500);
+  color: #1d0b02;
+  font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+.entrar:hover:not(:disabled) { background: #ff8f26; }
+.entrar:disabled {
+  pointer-events: none;           /* o clique cai no envoltório (conta tentativa) */
+  background: rgba(255,243,230,.14);
+  border-color: rgba(255,243,230,.35);
+  color: #e9d3bf;
+  cursor: not-allowed;
+}
+
+/* ==========================================================
+   10. DICA (o biscoito guia entra aqui depois)
+   ========================================================== */
+.rodape { display: flex; justify-content: center; padding-top: 8px; }
+.dica {
+  max-width: min(420px, 100%);
+  background: #fff; color: #111;
+  border-radius: 20px;
+  padding: 12px 16px;
+  font-size: .92rem; font-weight: 600;
+}
+.dica .exemplo {
+  display: block; margin-top: 6px;
+  font-weight: 400; font-style: italic;
+  user-select: none; -webkit-user-select: none; pointer-events: none;
+}
+.dica .aviso { display: block; font-weight: 400; font-size: .82rem; color: #444; margin-top: 4px; }
+
+/* ==========================================================
+   11. TELA DE BOAS-VINDAS
+   ========================================================== */
+.boas-vindas {
+  position: fixed; inset: 0; z-index: 50;
+  display: grid; place-items: center; text-align: center;
+  background: linear-gradient(160deg, var(--marrom-900), var(--marrom-800) 60%, #4a210a);
+  opacity: 0; visibility: hidden;
+  transition: opacity .4s ease, visibility .4s;
+}
+.boas-vindas.ativa { opacity: 1; visibility: visible; }
+.boas-vindas h2 { margin: 16px 0 6px; font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 600; }
+.boas-vindas p { margin: 0; color: var(--creme-suave); }
+.spinner {
+  width: 44px; height: 44px; margin: 22px auto 0;
+  border-radius: 50%;
+  border: 4px solid rgba(255,243,230,.25); border-top-color: var(--laranja-500);
+  animation: gira 1s linear infinite;
+}
+@keyframes gira { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+@media (max-width: 480px) {
+  .painel { padding: 22px 16px 18px; }
+}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confia? — Crie sua senha</title>
+  <meta name="description" content="Confia? — Recurso Educacional Aberto sobre segurança e privacidade na internet (BNCC EF08CO10 / Cultura Digital).">
+  <meta name="author" content="Guilherme Higino de Araújo Silva, Igor Vinicius Silva de Oliveira, Lázaro Gabriel Ewerton da Silva Santos, Mariana Raquel de Morais, Victor Emanuel Oliveira Silva">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="tela" id="tela-login">
+
+  <!-- Aba Instruções -->
+  <details class="instrucoes">
+    <summary>Instruções</summary>
+    <div class="instrucoes-corpo">
+      <p>Este é o seu primeiro acesso ao computador. Crie uma senha para proteger o que é seu.</p>
+      <p>Preencha os dois campos e confira a lista de requisitos. Quando todos estiverem marcados e as senhas forem iguais, o botão <strong>Entrar</strong> libera.</p>
+    </div>
+  </details>
+
+  <main class="centro">
+
+    <!-- Relógio e data -->
+    <div class="relogio" aria-hidden="true">
+      <div class="relogio-hora" id="relogio-hora">--:--</div>
+      <div class="relogio-data" id="relogio-data">&nbsp;</div>
+    </div>
+
+    <!-- Painel de vidro -->
+    <section class="painel" aria-labelledby="titulo-senha">
+      <div class="avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="#fff3e6"><circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c0-4.7 3.8-7.5 8.5-7.5s8.5 2.8 8.5 7.5z"/></svg>
+      </div>
+      <p class="usuario">Visitante</p>
+      <h1 class="titulo-painel" id="titulo-senha">Crie sua senha</h1>
+
+      <form id="form-senha" novalidate autocomplete="off">
+
+        <div class="campo">
+          <label for="senha">Nova senha</label>
+          <div class="campo-linha">
+            <input id="senha" name="senha" type="password" autocomplete="new-password"
+                   autocapitalize="off" autocorrect="off" spellcheck="false"
+                   aria-describedby="requisitos proximo-passo">
+            <button type="button" class="olho" data-alvo="senha" aria-pressed="false" aria-label="Mostrar nova senha">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/>
+                <path class="riscado" d="M3 3l18 18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Medidor de força -->
+        <div class="medidor" id="medidor" data-nivel="fraca">
+          <div class="medidor-topo">
+            <span>Força da senha</span>
+            <strong id="medidor-texto" role="status" aria-live="polite">Digite uma senha</strong>
+          </div>
+          <div class="barra" aria-hidden="true"><div class="barra-preench" id="barra-preench"></div></div>
+        </div>
+
+        <div class="campo">
+          <label for="confirmar">Confirmar senha</label>
+          <div class="campo-linha" id="linha-confirmar">
+            <input id="confirmar" name="confirmar" type="password" autocomplete="new-password"
+                   autocapitalize="off" autocorrect="off" spellcheck="false"
+                   aria-describedby="msg-confirmar">
+            <button type="button" class="olho" data-alvo="confirmar" aria-pressed="false" aria-label="Mostrar confirmação da senha">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/>
+                <path class="riscado" d="M3 3l18 18"/>
+              </svg>
+            </button>
+          </div>
+          <div class="msg-campo" id="msg-confirmar" aria-live="polite"></div>
+        </div>
+
+        <ul class="requisitos" id="requisitos" aria-label="Requisitos da senha"></ul>
+        <div class="proximo-passo" id="proximo-passo"></div>
+
+        <div class="acoes">
+          <span class="acoes-envoltorio" id="envoltorio-entrar">
+            <button type="submit" class="entrar" id="botao-entrar" disabled>Entrar</button>
+          </span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Dica (o biscoito guia entra aqui depois, quando os assets estiverem prontos) -->
+  <!-- <footer class="rodape">
+    <div class="dica" id="dica">
+      <span id="dica-texto">Dica: use uma frase longa que só você entenda.</span>
+      <span class="exemplo" aria-label="Exemplo de frase, não use como senha">Exemplo: “Meu gato Zeca pula 3 vezes no sofá!”</span>
+      <span class="aviso">(É só um exemplo, ele não funciona como senha. Crie a sua!)</span>
+    </div>
+  </footer> -->
+</div>
+
+<!-- Transição de boas-vindas -->
+<div class="boas-vindas" id="boas-vindas" role="status" aria-live="polite" aria-hidden="true">
+  <div>
+    <h2 id="boas-vindas-titulo">Bem-vindo, Visitante</h2>
+    <p>Preparando sua área de trabalho…</p>
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
+</div>
+
+<script src="js/login.js" defer></script>
+</body>
+</html>
