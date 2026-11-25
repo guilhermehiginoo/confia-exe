@@ -5,9 +5,28 @@ Roteiro do jogo no FaceCookie, na ordem em que as coisas acontecem num app de ve
 - Os termos de uso absurdos entram no cadastro (o QuizMania deixa de ser uma fase separada).
 - O desconhecido não conversa com o jogador: ele só manda o link do golpe.
 - Clicar no link abre uma chuva de spam.
-- Toda escolha arriscada vira migalha no dossiê do Biscoitinho.
+- Toda escolha arriscada vira migalha no dossiê do Biscoitinho. Na hora só aparece a notificação "🍪 +1 migalha · Alguém guardou isso sobre você…", sem explicar o erro: a lição vem no dossiê e na revisão do final, e a consequência volta numa fase seguinte.
 
 Regra da história: **cada escolha do começo volta mais tarde**, piorando ou salvando a situação.
+
+## Como o Biscoitinho engana
+
+O Biscoitinho **nunca manda errar de forma descarada** ("coloca 123456"). Isso faz o aluno desconfiar cedo demais, ou aprender errado. Ele seduz com os mesmos argumentos que golpes e apps de verdade usam, e o aluno aprende a reconhecer o *tipo* de conversa que engana:
+
+| Argumento | Exemplo |
+|---|---|
+| Comodidade | "Senha fácil de lembrar, assim você nunca esquece." |
+| Pressão social | "Ninguém lê isso." "Todo mundo faz." |
+| Preguiça | "São 47 páginas, vai demorar uma eternidade." |
+| Vaidade | "Perfil completo fica muito mais bonito!" |
+| Pressa | "Corre, acaba em 10 minutos!" |
+| Amizade | "É o Lucas, seu parceiro! Ajuda ele." |
+
+Regras:
+- **Sem raiva antes da hora.** Nas fases iniciais ele fica preocupado, preguiçoso ou exagerado, nunca bravo. O lado vilão aparece aos poucos e explode na revelação.
+- **Conselho que soa razoável.** Cada fala errada precisa parecer cuidado de amigo.
+- **Algumas dicas são verdadeiras** (como "instala as atualizações" no prólogo), pra ele ganhar confiança.
+- **O jogo mostra a verdade por outros sinais:** medidor, migalhas, consequências e o dossiê. O aluno decide entre o amigo simpático e esses sinais. É o "Confia?" do título.
 
 Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ agir com segurança.
 
@@ -38,12 +57,41 @@ Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ ag
 **Onde:** "Criar conta no FaceCookie", com o aviso "Isto é um jogo. Invente seu usuário e sua senha."
 
 1. **Usuário:** três sugestões (nome com ano de nascimento, nome com escola, apelido criativo). O Biscoitinho empurra o primeiro.
-2. **Senha:** medidor fraca/média/forte. "Coloca 123456, o medidor é exagerado."
+2. **Senha:** medidor fraca/média/forte. O Biscoitinho empurra a senha fácil de lembrar:
+   - vazia: "Escolhe uma senha fácil de lembrar, tá? Senha esquecida é um saco."
+   - fraca: "Usa seu nome com o ano que você nasceu! Assim você nunca esquece."
+   - média: "Tá ótima! Senha muito grande ninguém lembra, hein."
+   - forte: "Nossa… vai lembrar disso amanhã? Depois não reclama, hein."
 3. **Verificação em duas etapas:** "Agora não, né? Que preguiça!"
-4. **Termos de uso (47 páginas):** botão "Aceitar" enorme, link "ler termos" minúsculo. "Ninguém lê isso, clica em aceitar!"
-   - Quem lê joga o minijogo da lupa e acha 3 cláusulas, umas absurdas e outras sérias:
-     - absurdas: metade do lanche do recreio toda sexta; o FaceCookie escolhe o nome do seu próximo bichinho; seu primeiro filho se chamará Cookie Júnior;
-     - sérias: o app pode ler seus contatos e mandar convites em seu nome; seus dados podem ser compartilhados com parceiros.
+4. **Termos de uso (47 páginas):** botão "Aceitar" enorme e um botão "Ler tudo" ao lado. "Ninguém lê isso, clica em aceitar!" No "Ler tudo": "Ih, são 47 páginas… vai demorar uma eternidade."
+   - Quem lê joga o minijogo da lupa e procura as cláusulas sérias no meio das absurdas e de texto chato de propósito. O perigo de verdade fica escondido entre as piadas.
+   - **Absurdas** (leves e engraçadas, sem nada pesado; provam que ninguém lê):
+
+     | Cláusula no jogo | De onde vem |
+     |---|---|
+     | O FaceCookie pode farmar aura com a sua conta, e a aura é dele | Meme da turma |
+     | Fazer o gesto do "67" toda vez que alguém disser "67" | Meme da turma (trocar quando envelhecer) |
+     | Entregar metade do lanche do recreio toda sexta | Inventada pro jogo (volta no final) |
+     | 1.000 horas de serviço comunitário: abraçar gatos de rua, raspar chiclete, pintar conchas de caracol | Experimento da Purple, empresa de Wi-Fi, em 2017: cerca de 22 mil pessoas aceitaram uma cláusula assim (conferir a lista de tarefas original) |
+     | Rir de todas as piadas do Biscoitinho | Inventada pro jogo |
+
+   - **Sérias** (aparecem em termos e políticas de privacidade de apps conhecidos; ao achar uma, aparece o que ela significa):
+
+     | Cláusula no jogo | Inspirada em | O que ensina |
+     |---|---|---|
+     | Licença mundial e gratuita pra usar, copiar e modificar o que você posta | Termos do Instagram | Postar dá ao app o direito de usar sua foto |
+     | Usar seu nome e foto de perfil em anúncios, sem pagar | Termos do Facebook | Você pode virar propaganda sem saber |
+     | Ler seus contatos e mandar convites em seu nome | Comum em apps de rede social | Permissões: o app fala com seus amigos como se fosse você |
+     | Usar sua localização com o app fechado | Permissão de localização "sempre" | Localização em segundo plano revela casa, escola e rotina |
+     | Coletar dados do rosto, da voz e de como você digita | Política de privacidade do TikTok (EUA, 2021) | Até a velocidade dos seus toques identifica você (biometria) |
+     | Moedas e skins compradas não valem dinheiro e somem se a conta for banida | Termos de jogos grátis (Free Fire, Supercell etc.) | Dinheiro gasto em jogo compra um serviço, não um produto seu |
+     | Usamos cookies para acompanhar o que você faz em outros sites (só no doc, prepara a revelação) | Banners de cookies | O Biscoitinho é um cookie de rastreamento |
+
+   - **Cláusula do prêmio** (escondida no fim da lista, parece texto comum): "Se você leu até aqui, toque nesta frase e ganhe um prêmio." Quem toca ganha o **selo Leitor Atento** (conquista, não migalha) e o Biscoitinho se assusta: "Q-quê? Você leu ATÉ O FIM?!". Inspirada na PC Pitstop, que em 2005 escondeu um prêmio de US$ 1.000 nos termos do seu programa; levou meses até alguém achar.
+   - Ficaram de fora da tela, mas entram na revisão final: dados guardados mesmo depois de apagar a conta, compartilhamento com "empresas do grupo" (polêmica do WhatsApp em 2021) e termos que mudam sem avisar.
+   - Os textos do jogo são reescritos e adaptados ao FaceCookie, não cópias dos termos originais.
+   - O Biscoitinho desdenha das reais ("isso é normal, todo app faz") e ri das absurdas.
+   - Fechamento: "Você não precisa ler 47 páginas. Procure as palavras *dados*, *compartilhar*, *localização* e *excluir*."
 
 Caminhos:
 - 🍪 Senha fraca, verificação desligada, aceitar sem ler.
@@ -154,7 +202,7 @@ O FaceCookie começa a falhar: o feed se enche de farelos e o Biscoitinho aparec
 | 1 | Usuário com nome e ano de nascimento |
 | 1 | Senha fraca |
 | 1 | Verificação em duas etapas desligada |
-| 1 | Termos aceitos sem ler (com a cláusula do lanche) |
+| 1 | Termos aceitos sem ler (com a cláusula do lanche e "seus contatos receberam um convite em seu nome") |
 | 2 | Cada campo sensível ou absurdo mostrado (escola, endereço, CPF…) |
 | 2 | Perfil público |
 | 3 | Selfie de uniforme com localização |
@@ -185,8 +233,8 @@ Por turnos. O jogador começa com **2 corações + 1 por fase bem resolvida**. O
 - **Final Biscoitado (derrota):** o Biscoitão engole a tela ("Obrigado pelas migalhas!").
 
 Os dois levam às mesmas telas:
-1. O que são cookies de verdade, em linguagem simples.
-2. Revisão das escolhas de cada fase, com a lição.
+1. O que são cookies de verdade, em linguagem simples. Nos aplicativos, o mesmo papel é do identificador de publicidade (IDFA no iPhone, ID de publicidade no Android) e das bibliotecas de anúncio embutidas nos apps. Dica pra levar pra casa: "Pedir ao app para não rastrear" no iPhone, ou excluir o ID de publicidade nas configurações do Android.
+2. Revisão das escolhas de cada fase, com a lição. Na fase 1, um "Sabia que?" com histórias reais e leves dos termos: as 22 mil pessoas que aceitaram abraçar gatos e raspar chiclete (Purple) e o prêmio que levou meses pra alguém achar (PC Pitstop).
 3. Perguntas pra conversar em sala: "Por que o Biscoitinho parecia confiável?", "Quem ganha com os seus dados?".
 
 Quem aceitou os termos sem ler recebe uma última notificação: "Hoje é sexta! Entregue metade do seu lanche ao FaceCookie."
