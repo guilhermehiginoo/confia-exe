@@ -9,6 +9,25 @@ Roteiro do jogo no FaceCookie, na ordem em que as coisas acontecem num app de ve
 
 Regra da história: **cada escolha do começo volta mais tarde**, piorando ou salvando a situação.
 
+## Como o Biscoitinho engana
+
+O Biscoitinho **nunca manda errar de forma descarada** ("coloca 123456"). Isso faz o aluno desconfiar cedo demais, ou aprender errado. Ele seduz com os mesmos argumentos que golpes e apps de verdade usam, e o aluno aprende a reconhecer o *tipo* de conversa que engana:
+
+| Argumento | Exemplo |
+|---|---|
+| Comodidade | "Senha fácil de lembrar, assim você nunca esquece." |
+| Pressão social | "Ninguém lê isso." "Todo mundo faz." |
+| Preguiça | "São 47 páginas, vai demorar uma eternidade." |
+| Vaidade | "Perfil completo fica muito mais bonito!" |
+| Pressa | "Corre, acaba em 10 minutos!" |
+| Amizade | "É o Lucas, seu parceiro! Ajuda ele." |
+
+Regras:
+- **Sem raiva antes da hora.** Nas fases iniciais ele fica preocupado, preguiçoso ou exagerado, nunca bravo. O lado vilão aparece aos poucos e explode na revelação.
+- **Conselho que soa razoável.** Cada fala errada precisa parecer cuidado de amigo.
+- **Algumas dicas são verdadeiras** (como "instala as atualizações" no prólogo), pra ele ganhar confiança.
+- **O jogo mostra a verdade por outros sinais:** medidor, migalhas, consequências e o dossiê. O aluno decide entre o amigo simpático e esses sinais. É o "Confia?" do título.
+
 Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ agir com segurança.
 
 | # | Fase | Tema | Volta depois? |
@@ -38,7 +57,11 @@ Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ ag
 **Onde:** "Criar conta no FaceCookie", com o aviso "Isto é um jogo. Invente seu usuário e sua senha."
 
 1. **Usuário:** três sugestões (nome com ano de nascimento, nome com escola, apelido criativo). O Biscoitinho empurra o primeiro.
-2. **Senha:** medidor fraca/média/forte. "Coloca 123456, o medidor é exagerado."
+2. **Senha:** medidor fraca/média/forte. O Biscoitinho empurra a senha fácil de lembrar:
+   - vazia: "Escolhe uma senha fácil de lembrar, tá? Senha esquecida é um saco."
+   - fraca: "Usa seu nome com o ano que você nasceu! Assim você nunca esquece."
+   - média: "Tá ótima! Senha muito grande ninguém lembra, hein."
+   - forte: "Nossa… vai lembrar disso amanhã? Depois não reclama, hein."
 3. **Verificação em duas etapas:** "Agora não, né? Que preguiça!"
 4. **Termos de uso (47 páginas):** botão "Aceitar" enorme, link "ler termos" minúsculo. "Ninguém lê isso, clica em aceitar!"
    - Quem lê joga o minijogo da lupa e acha 3 cláusulas, umas absurdas e outras sérias:
