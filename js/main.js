@@ -1,7 +1,7 @@
 const C = window.Confia;
 const jogo = document.getElementById("jogo");
 // Escolhas da partida, usadas depois no dossiê.
-const partida = { usuario: "", forcaSenha: 0, leuTermos: false, aceitouTermos: false };
+const partida = { usuario: "", forcaSenha: 0, leuTermos: false, aceitouTermos: false, migalhas: [] };
 
 const forcaDaSenha = (senha, usuario = "") => {
   if (!senha) return 0;
@@ -88,6 +88,22 @@ const atualizarSenha = (e) => {
   trocarBiscoitinho(...fala);
 };
 
+// Escolha arriscada vira migalha. Na hora não explica nada: a lição vem no dossiê do final.
+const avisos = document.getElementById("avisos");
+const migalha = (id, licao) => {
+  partida.migalhas.push({ id, licao });
+  const n = partida.migalhas.length;
+  avisos.insertAdjacentHTML("beforeend", C.Aviso({
+    icone: "🍪", variante: "migalha",
+    titulo: `+1 migalha (${n})`,
+    texto: "Alguém guardou isso sobre você…",
+  }));
+  const aviso = avisos.lastElementChild;
+  C.Som.alerta();
+  setTimeout(() => aviso.remove(), 5000);
+};
+avisos.addEventListener("click", (e) => e.target.closest(".aviso__fechar")?.closest(".aviso").remove());
+
 // Inspiradas em termos e experimentos reais (fontes no docs/FASES.md, fase 1).
 const CLAUSULAS = [
   "§ 3.1 · O usuário entrega metade do lanche do recreio ao FaceCookie toda sexta-feira.",
@@ -124,10 +140,14 @@ const acoes = {
     partida.usuario = usuario.value.trim();
     partida.forcaSenha = forcaDaSenha(document.getElementById("senha").value, partida.usuario);
     telaTermos();
+    if (nivel(partida.forcaSenha) === "fraca")
+      migalha("senha-fraca", "Senhas longas, misturando letras, números e símbolos, deixam sua conta muito mais segura. E nada de nome ou data de nascimento!");
   },
   "ler-termos": () => { partida.leuTermos = true; telaTermos({ lendo: true }); },
   "aceitar-termos": () => {
     partida.aceitouTermos = true;
+    if (!partida.leuTermos)
+      migalha("termos-sem-ler", "Ninguém precisa ler 47 páginas, mas vale ao menos saber O QUE você está aceitando. Procure as palavras dados, compartilhar, localização e excluir.");
     console.log("partida", partida); // próxima fase ainda não existe
   },
 };

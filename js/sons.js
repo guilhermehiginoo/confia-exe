@@ -30,6 +30,10 @@
       tom({ tipo: "triangle", de: 660, dur: 0.1, vol: 0.1 });
       tom({ tipo: "triangle", de: 990, dur: 0.18, vol: 0.1, atraso: 0.09 });
     },
+    alerta: () => {
+      tom({ tipo: "square", de: 740, dur: 0.09, vol: 0.05 });
+      tom({ tipo: "square", de: 520, dur: 0.14, vol: 0.05, atraso: 0.1 });
+    },
     get mudo() { return mudo; },
     alternar() {
       mudo = !mudo;

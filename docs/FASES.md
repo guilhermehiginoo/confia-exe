@@ -5,7 +5,7 @@ Roteiro do jogo no FaceCookie, na ordem em que as coisas acontecem num app de ve
 - Os termos de uso absurdos entram no cadastro (o QuizMania deixa de ser uma fase separada).
 - O desconhecido não conversa com o jogador: ele só manda o link do golpe.
 - Clicar no link abre uma chuva de spam.
-- Toda escolha arriscada vira migalha no dossiê do Biscoitinho.
+- Toda escolha arriscada vira migalha no dossiê do Biscoitinho. Na hora só aparece a notificação "🍪 +1 migalha · Alguém guardou isso sobre você…", sem explicar o erro: a lição vem no dossiê e na revisão do final, e a consequência volta numa fase seguinte.
 
 Regra da história: **cada escolha do começo volta mais tarde**, piorando ou salvando a situação.
 

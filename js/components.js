@@ -92,7 +92,13 @@
     </div>
     <p class="capa__frase">Carregando… ${+pct}%</p>`;
 
+  const Aviso = ({ icone = "⚠️", titulo, texto, variante = "" }) => `
+    <div class="aviso${variante ? ` aviso--${esc(variante)}` : ""}" role="status">
+      <div class="aviso__topo">${esc(icone)} ${esc(titulo)}<button type="button" class="aviso__fechar" aria-label="Fechar aviso">×</button></div>
+      <p class="aviso__texto">${esc(texto)}</p>
+    </div>`;
+
   const Dica = (texto) => `<p class="dica"><b>Dica:</b> ${esc(texto)}</p>`;
 
-  window.Confia = { esc, Tela, Topo, Card, Titulo, Texto, Mensagem, Endereco, Biscoitinho, Botao, Escolhas, Campo, Etiqueta, Lista, Medidor, Logo, Capa, Creditos, Carregando, Dica, EMOCOES };
+  window.Confia = { esc, Tela, Topo, Card, Titulo, Texto, Mensagem, Endereco, Biscoitinho, Botao, Escolhas, Campo, Etiqueta, Lista, Medidor, Logo, Capa, Creditos, Carregando, Dica, Aviso, EMOCOES };
 })();
