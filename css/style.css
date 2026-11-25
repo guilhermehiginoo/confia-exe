@@ -365,6 +365,30 @@ img {
   margin: 0;
 }
 
+#jogo {
+  height: 100%;
+}
+
+.rodape {
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  text-align: center;
+  font: 500 12px/1.4 var(--fonte-texto);
+  color: var(--tinta);
+}
+
+.rodape p {
+  margin: 0;
+}
+
+.rodape__licenca {
+  opacity: .8;
+}
+
+.rodape a {
+  color: inherit;
+  font-weight: 600;
+}
+
 .logo {
   margin: 0;
   font: 700 64px/.9 var(--fonte-titulo);
