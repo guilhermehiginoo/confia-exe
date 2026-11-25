@@ -712,6 +712,34 @@ img {
   }
 }
 
+.som {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--tinta);
+  background: var(--branco);
+  box-shadow: 3px 3px 0 var(--tinta);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.som:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.som:focus-visible {
+  outline: 4px solid var(--rosa);
+  outline-offset: 3px;
+}
+
+/* Espaço pro botão de som no canto do topo. */
+.topo {
+  padding-right: 68px;
+}
+
 .visualmente-oculto {
   position: absolute;
   width: 1px;

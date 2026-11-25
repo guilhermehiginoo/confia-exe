@@ -82,6 +82,7 @@ const atualizarSenha = (e) => {
   const f = forcaDaSenha(document.getElementById("senha").value, usuario);
   const n = nivel(f);
   document.getElementById("forca").innerHTML = C.Medidor(`Senha: ${n}`, f, { variante: n === "média" ? "media" : n });
+  if (e.target.id === "senha") C.Som.tecla(f);
   const fala = FALA_SENHA[document.getElementById("senha").value ? n : "vazia"];
   if (jogo.querySelector(".fala")?.textContent.includes(fala[1])) return;
   trocarBiscoitinho(...fala);
@@ -144,6 +145,7 @@ jogo.addEventListener("mouseover", (e) => {
   const img = jogo.querySelector(".biscoitinho__img");
   antesDoHover = [img?.src.split("/").pop().replace(".png", ""), jogo.querySelector(".fala")?.textContent.replace(/^Biscoitinho:\s*/, "")];
   trocarBiscoitinho(...reacao);
+  C.Som.reacao();
 });
 jogo.addEventListener("mouseout", (e) => {
   const botao = e.target.closest("[data-acao]");
@@ -155,10 +157,18 @@ jogo.addEventListener("mouseout", (e) => {
 jogo.addEventListener("click", (e) => {
   const acao = e.target.closest("[data-acao]")?.dataset.acao;
   if (!acao) return;
+  acao === "aceitar-termos" ? C.Som.aceitar() : C.Som.clique();
   antesDoHover = null;
   acoes[acao]?.();
 });
 
+const botaoSom = document.getElementById("som");
+const mostrarSom = () => {
+  botaoSom.textContent = C.Som.mudo ? "🔇" : "🔊";
+  botaoSom.setAttribute("aria-pressed", !C.Som.mudo);
+};
+botaoSom.addEventListener("click", () => { C.Som.alternar(); mostrarSom(); C.Som.clique(); });
+mostrarSom();
 jogo.addEventListener("input", (e) => (e.target.id === "senha" || e.target.id === "usuario") && atualizarSenha(e));
 
 telaInicio();
