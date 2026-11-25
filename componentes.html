@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Confia? Componentes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    body.vitrine { height: auto; background: #efece8; color: #1d1a18; padding: 24px 16px 64px; }
+    .vitrine h1.v { font: 700 36px var(--fonte-titulo); margin: 0 0 8px; }
+    .vitrine .v-lead { max-width: 68ch; margin: 0 0 40px; color: #6f6862; }
+    .v-tela { max-width: 1200px; margin: 0 auto 56px; }
+    .v-tela h2 { font: 700 22px var(--fonte-titulo); margin: 0 0 16px; }
+    .v-par { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr); gap: 24px; align-items: start; }
+    @media (max-width: 760px) { .v-par { grid-template-columns: 1fr; } }
+    .v-cap { font-size: 12px; color: #6f6862; letter-spacing: .06em; text-transform: uppercase; margin-top: 8px; }
+    .v-fit { width: 100%; overflow: hidden; }
+    .v-dev { transform-origin: 0 0; background: #0c0c0c; }
+    .v-dev.m { width: 390px; height: 844px; border-radius: 48px; padding: 12px; }
+    .v-dev.m .tela { border-radius: 38px; }
+    .v-dev.m .topo, .v-dev.m .capa { padding-top: 52px; }
+    .v-dev.d { width: 1440px; height: 900px; border-radius: 18px; padding: 14px; }
+    .v-dev.d .tela { border-radius: 8px; }
+  </style>
+</head>
+<body class="vitrine">
+  <div class="v-tela">
+    <h1 class="v">Confia? · componentes</h1>
+    <p class="v-lead">As 5 telas de referência montadas com os componentes de <code>js/components.js</code> e <code>css/style.css</code>. Cada uma aparece em celular e computador, reduzidas pra caber aqui.</p>
+  </div>
+  <div id="lista"></div>
+
+  <script src="js/components.js"></script>
+  <script>
+    const C = window.Confia;
+    const telas = [
+      ["Início", C.Capa({ emocao: "animado", conteudo:
+        `<p class="capa__frase">Nem tudo na internet é o que parece.</p>
+         <div class="capa__acoes">${C.Botao("Jogar", { primario: true, centro: true, acao: "jogar" })}${C.Botao("Créditos", { centro: true, acao: "creditos" })}</div>` })],
+
+      ["Carregando", C.Capa({ emocao: "sono", logoPequeno: true, conteudo:
+        C.Carregando(72) + C.Dica("banco de verdade nunca pede sua senha por mensagem.") })],
+
+      ["Cadastro", C.Tela({ cena: 1, total: 12,
+        conteudo: C.Etiqueta("? Instruções", { acao: "instrucoes" }) +
+          C.Card({ icone: "👤", titulo: "Criar perfil", conteudo:
+            C.Campo({ id: "apelido", rotulo: "Apelido", placeholder: "ex.: gato_veloz" }) +
+            C.Campo({ id: "senha", rotulo: "Senha", tipo: "password", placeholder: "••••••••" }) }),
+        lateral: C.Biscoitinho("confiante", "Coloca seu nome completo e o da sua escola, fica mais bonito!") +
+          C.Escolhas("", C.Botao("Criar perfil", { primario: true, centro: true, acao: "criar-perfil" })) })],
+
+      ["Cena · chat", C.Tela({ cena: 4, total: 12,
+        conteudo: C.Card({ icone: "💬", titulo: "Chat · Lucas_gamer", selo: "NOVO", conteudo:
+          C.Mensagem("mano olha isso, skin lendária de graça 😱") +
+          C.Mensagem("só entrar com a senha do teu jogo:") +
+          C.Endereco("skins-", "gratis", ".xyz/login") }),
+        lateral: C.Biscoitinho("timido", "Psiu… é rapidinho, ninguém vai saber 🤫") +
+          C.Escolhas("O que você faz?",
+            C.Botao("👉 Entrar com a senha", { primario: true, acao: "errar" }) +
+            C.Botao("🤔 Perguntar pro Lucas por outro lugar", { acao: "acertar" })) })],
+
+      ["Resultado", C.Tela({ cena: 4, total: 12,
+        conteudo: C.Card({ icone: "✅", titulo: "Boa! Você desconfiou", variante: "acerto", conteudo:
+            C.Titulo("Era golpe. Os sinais eram:") +
+            C.Lista(["Prêmio bom demais pra ser verdade", "Site com endereço estranho (.xyz)", "Pediu a senha da sua conta"]) }) +
+          C.Medidor("Confiança no Biscoitinho", 75),
+        lateral: C.Biscoitinho("bravo", "Hmpf! Da próxima você não escapa…") +
+          C.Escolhas("", C.Botao("Próxima cena →", { primario: true, centro: true, acao: "proxima" })) })],
+    ];
+
+    document.getElementById("lista").innerHTML = telas.map(([nome, html]) => `
+      <section class="v-tela"><h2>${nome}</h2><div class="v-par">
+        <div><div class="v-fit"><div class="v-dev m" inert>${html}</div></div><div class="v-cap">Celular</div></div>
+        <div><div class="v-fit"><div class="v-dev d" inert>${html}</div></div><div class="v-cap">Computador</div></div>
+      </div></section>`).join("");
+
+    const ajustar = () => document.querySelectorAll(".v-fit").forEach((f) => {
+      const d = f.firstElementChild, s = Math.min(1, f.clientWidth / d.offsetWidth);
+      d.style.transform = `scale(${s})`;
+      f.style.height = d.offsetHeight * s + "px";
+    });
+    ajustar();
+    addEventListener("resize", ajustar);
+  </script>
+</body>
+</html>
