@@ -63,10 +63,35 @@ Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ ag
    - média: "Tá ótima! Senha muito grande ninguém lembra, hein."
    - forte: "Nossa… vai lembrar disso amanhã? Depois não reclama, hein."
 3. **Verificação em duas etapas:** "Agora não, né? Que preguiça!"
-4. **Termos de uso (47 páginas):** botão "Aceitar" enorme, link "ler termos" minúsculo. "Ninguém lê isso, clica em aceitar!"
-   - Quem lê joga o minijogo da lupa e acha 3 cláusulas, umas absurdas e outras sérias:
-     - absurdas: metade do lanche do recreio toda sexta; o FaceCookie escolhe o nome do seu próximo bichinho; seu primeiro filho se chamará Cookie Júnior;
-     - sérias: o app pode ler seus contatos e mandar convites em seu nome; seus dados podem ser compartilhados com parceiros.
+4. **Termos de uso (47 páginas):** botão "Aceitar" enorme e um botão "Ler tudo" ao lado. "Ninguém lê isso, clica em aceitar!" No "Ler tudo": "Ih, são 47 páginas… vai demorar uma eternidade."
+   - Quem lê joga o minijogo da lupa e procura as cláusulas sérias no meio das absurdas e de texto chato de propósito. O perigo de verdade fica escondido entre as piadas.
+   - **Absurdas, mas aconteceram de verdade** (o humor, e a prova de que ninguém lê):
+
+     | Cláusula no jogo | De onde vem |
+     |---|---|
+     | Entregar metade do lanche do recreio toda sexta | Inventada pro jogo (volta no final) |
+     | Entregar sua alma imortal | GameStation, loja de games inglesa: em 2010, como pegadinha de 1º de abril, pôs isso nos termos da loja online e milhares de clientes aceitaram |
+     | Ceder seu primeiro filho | Experimento da F-Secure em 2014: um Wi-Fi grátis em Londres pedia o primeiro filho nos termos, e gente aceitou |
+     | 1.000 horas de serviço comunitário, limpando banheiro químico | Experimento da Purple, empresa de Wi-Fi, em 2017: cerca de 22 mil pessoas aceitaram |
+     | Não usar o app pra fabricar armas nucleares, químicas ou biológicas | Termos do iTunes, da Apple, tinham essa proibição |
+
+   - **Sérias** (aparecem em termos e políticas de privacidade de apps conhecidos; ao achar uma, aparece o que ela significa):
+
+     | Cláusula no jogo | Inspirada em | O que ensina |
+     |---|---|---|
+     | Licença mundial e gratuita pra usar, copiar, modificar e distribuir o que você posta | Termos do Instagram | Postar dá ao app o direito de usar sua foto |
+     | Usar seu nome e foto de perfil em anúncios, sem pagar | Termos do Facebook | Você pode virar propaganda sem saber |
+     | Ler seus contatos e mandar convites em seu nome | Comum em apps de rede social | Permissões: o app fala com seus amigos como se fosse você |
+     | Usar sua localização com o app fechado | Permissão de localização "sempre" | Localização em segundo plano revela casa, escola e rotina |
+     | Coletar dados do rosto, da voz e do jeito de digitar | Política de privacidade do TikTok (EUA, 2021) | Até seu jeito de digitar identifica você |
+     | Compartilhar dados com empresas do grupo e parceiros | Atualização do WhatsApp em 2021, que gerou muita polêmica | "Parceiros" são outras empresas; seus dados circulam |
+     | Guardar dados mesmo depois de apagar a conta | Comum em políticas de privacidade | Apagar a conta não apaga tudo |
+     | Mudar os termos sem avisar; continuar usando é concordar | Comum em quase todos os termos | Aceitar uma vez vale também para as mudanças |
+     | Usamos cookies para acompanhar o que você faz em outros sites (só no doc, prepara a revelação) | Banners de cookies | O Biscoitinho é um cookie de rastreamento |
+
+   - Os textos do jogo são reescritos e adaptados ao FaceCookie, não cópias dos termos originais.
+   - O Biscoitinho desdenha das reais ("isso é normal, todo app faz") e ri das absurdas.
+   - Fechamento: "Você não precisa ler 47 páginas. Procure as palavras *dados*, *compartilhar*, *localização* e *excluir*."
 
 Caminhos:
 - 🍪 Senha fraca, verificação desligada, aceitar sem ler.
@@ -177,7 +202,7 @@ O FaceCookie começa a falhar: o feed se enche de farelos e o Biscoitinho aparec
 | 1 | Usuário com nome e ano de nascimento |
 | 1 | Senha fraca |
 | 1 | Verificação em duas etapas desligada |
-| 1 | Termos aceitos sem ler (com a cláusula do lanche) |
+| 1 | Termos aceitos sem ler (com a cláusula do lanche e "seus contatos receberam um convite em seu nome") |
 | 2 | Cada campo sensível ou absurdo mostrado (escola, endereço, CPF…) |
 | 2 | Perfil público |
 | 3 | Selfie de uniforme com localização |

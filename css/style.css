@@ -512,6 +512,19 @@ img {
   .botao {
     min-height: 52px;
   }
+
+  .botao--gigante {
+    min-height: 64px;
+    font-size: 26px;
+  }
+
+  /* Lista de cláusulas rola por dentro, com um degradê avisando que tem mais. */
+  .termos {
+    max-height: max(120px, calc(100dvh - 476px));
+    overflow: auto;
+    -webkit-mask-image: linear-gradient(#000 80%, transparent);
+    mask-image: linear-gradient(#000 80%, transparent);
+  }
 }
 
 /* Teclado aberto no celular: o campo digitado rola pra cima do Biscoitinho, que não se mexe. */
@@ -562,6 +575,11 @@ img {
     grid-row: 1;
     padding: 0;
     gap: 20px;
+  }
+
+  .termos {
+    max-height: 260px;
+    overflow: auto;
   }
 
   .biscoitinho {
@@ -708,4 +726,20 @@ img {
 
 .medidor--media .medidor__valor {
   background: var(--laranja);
+}
+
+.botao--gigante {
+  min-height: 96px;
+  font-size: 32px;
+}
+
+.termos {
+  border: 3px dashed var(--tinta);
+  padding: 12px;
+  font-size: 14px;
+}
+
+.termos p {
+  margin: 8px 0 0;
+  color: var(--apagado);
 }

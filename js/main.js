@@ -1,7 +1,7 @@
 const C = window.Confia;
 const jogo = document.getElementById("jogo");
 // Escolhas da partida, usadas depois no dossiê.
-const partida = { usuario: "", forcaSenha: 0 };
+const partida = { usuario: "", forcaSenha: 0, leuTermos: false, aceitouTermos: false };
 
 const forcaDaSenha = (senha, usuario = "") => {
   if (!senha) return 0;
@@ -87,6 +87,34 @@ const atualizarSenha = (e) => {
   trocarBiscoitinho(...fala);
 };
 
+// Inspiradas em termos e experimentos reais (fontes no docs/FASES.md, fase 1).
+const CLAUSULAS = [
+  "§ 3.1 · O usuário entrega metade do lanche do recreio ao FaceCookie toda sexta-feira.",
+  "§ 4.7 · Você dá ao FaceCookie uma licença mundial e gratuita para usar, copiar, modificar e distribuir tudo o que você posta.",
+  "§ 6.2 · Você concorda em fazer 1.000 horas de serviço comunitário, incluindo limpar banheiros químicos de festival.",
+  "§ 7.4 · O FaceCookie pode ler seus contatos e mandar convites em seu nome.",
+  "§ 9.1 · Podemos usar seu nome e sua foto de perfil em anúncios, sem te pagar nada.",
+  "§ 11.3 · Você não pode usar o FaceCookie para fabricar armas nucleares, químicas ou biológicas.",
+  "§ 15.3 · Podemos usar sua localização mesmo com o app fechado.",
+  "§ 17.8 · Podemos coletar dados do seu rosto e da sua voz nas fotos e vídeos que você posta, e até o jeito como você digita.",
+  "§ 19.2 · Seus dados podem ser compartilhados com outras empresas do grupo FaceCookie e com parceiros.",
+  "§ 23.6 · Você cede ao FaceCookie o seu primeiro filho, pela eternidade.",
+  "§ 31.6 · Você entrega ao FaceCookie a sua alma imortal.",
+  "§ 38.4 · Mesmo que você apague a conta, guardamos seus dados por tempo indeterminado.",
+  "§ 47.0 · Podemos mudar estes termos sem avisar. Continuar usando significa concordar.",
+];
+
+const telaTermos = ({ lendo = false } = {}) => {
+  jogo.innerHTML = C.Tela({
+    cena: 2, total: 12,
+    conteudo: C.Card({ icone: "📜", titulo: "Termos de uso", selo: "47 páginas", conteudo:
+      C.Texto("Para usar o FaceCookie, você precisa aceitar os Termos de Uso e a Política de Privacidade.") +
+      (lendo ? `<div class="termos" tabindex="0">${C.Lista(CLAUSULAS)}<p>… e mais 46 páginas.</p></div>` : "") }),
+    lateral: C.Biscoitinho(lendo ? "nervoso" : "rindo", lendo ? "Ei! Ninguém lê isso, fecha aí!" : "Ninguém lê isso, clica em aceitar!") +
+      C.Escolhas("", (lendo ? "" : C.Botao("Ler tudo", { centro: true, acao: "ler-termos" })) + `<button type="button" class="botao botao--primario botao--centro botao--gigante" data-acao="aceitar-termos">ACEITAR</button>`),
+  });
+};
+
 const acoes = {
   jogar: telaCadastro,
   "criar-conta": () => {
@@ -94,7 +122,12 @@ const acoes = {
     if (!usuario.value.trim()) return usuario.focus();
     partida.usuario = usuario.value.trim();
     partida.forcaSenha = forcaDaSenha(document.getElementById("senha").value, partida.usuario);
-    console.log("partida", partida); // próxima tela ainda não existe
+    telaTermos();
+  },
+  "ler-termos": () => { partida.leuTermos = true; telaTermos({ lendo: true }); },
+  "aceitar-termos": () => {
+    partida.aceitouTermos = true;
+    console.log("partida", partida); // próxima fase ainda não existe
   },
 };
 
