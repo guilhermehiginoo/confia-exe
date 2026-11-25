@@ -194,6 +194,13 @@ img {
   padding: 0 16px;
 }
 
+/* As PNGs têm proporções diferentes: caixa quadrada fixa deixa todas do mesmo tamanho. */
+.biscoitinho__img,
+.capa__img {
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 .biscoitinho__img {
   width: 104px;
   flex: none;
