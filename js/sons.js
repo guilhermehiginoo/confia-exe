@@ -34,6 +34,7 @@
       tom({ tipo: "square", de: 740, dur: 0.09, vol: 0.05 });
       tom({ tipo: "square", de: 520, dur: 0.14, vol: 0.05, atraso: 0.1 });
     },
+    conquista: () => [523, 659, 784, 1047].forEach((de, i) => tom({ tipo: "triangle", de, dur: 0.16, vol: 0.09, atraso: i * 0.08 })),
     get mudo() { return mudo; },
     alternar() {
       mudo = !mudo;

@@ -87,6 +87,7 @@ Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ ag
      | Moedas e skins compradas não valem dinheiro e somem se a conta for banida | Termos de jogos grátis (Free Fire, Supercell etc.) | Dinheiro gasto em jogo compra um serviço, não um produto seu |
      | Usamos cookies para acompanhar o que você faz em outros sites (só no doc, prepara a revelação) | Banners de cookies | O Biscoitinho é um cookie de rastreamento |
 
+   - **Cláusula do prêmio** (escondida no fim da lista, parece texto comum): "Se você leu até aqui, toque nesta frase e ganhe um prêmio." Quem toca ganha o **selo Leitor Atento** (conquista, não migalha) e o Biscoitinho se assusta: "Q-quê? Você leu ATÉ O FIM?!". Inspirada na PC Pitstop, que em 2005 escondeu um prêmio de US$ 1.000 nos termos do seu programa; levou meses até alguém achar.
    - Ficaram de fora da tela, mas entram na revisão final: dados guardados mesmo depois de apagar a conta, compartilhamento com "empresas do grupo" (polêmica do WhatsApp em 2021) e termos que mudam sem avisar.
    - Os textos do jogo são reescritos e adaptados ao FaceCookie, não cópias dos termos originais.
    - O Biscoitinho desdenha das reais ("isso é normal, todo app faz") e ri das absurdas.
@@ -233,7 +234,7 @@ Por turnos. O jogador começa com **2 corações + 1 por fase bem resolvida**. O
 
 Os dois levam às mesmas telas:
 1. O que são cookies de verdade, em linguagem simples. Nos aplicativos, o mesmo papel é do identificador de publicidade (IDFA no iPhone, ID de publicidade no Android) e das bibliotecas de anúncio embutidas nos apps. Dica pra levar pra casa: "Pedir ao app para não rastrear" no iPhone, ou excluir o ID de publicidade nas configurações do Android.
-2. Revisão das escolhas de cada fase, com a lição. Na fase 1, um "Sabia que?" com histórias reais e leves dos termos: as 22 mil pessoas que aceitaram abraçar gatos e raspar chiclete (Purple).
+2. Revisão das escolhas de cada fase, com a lição. Na fase 1, um "Sabia que?" com histórias reais e leves dos termos: as 22 mil pessoas que aceitaram abraçar gatos e raspar chiclete (Purple) e o prêmio que levou meses pra alguém achar (PC Pitstop).
 3. Perguntas pra conversar em sala: "Por que o Biscoitinho parecia confiável?", "Quem ganha com os seus dados?".
 
 Quem aceitou os termos sem ler recebe uma última notificação: "Hoje é sexta! Entregue metade do seu lanche ao FaceCookie."

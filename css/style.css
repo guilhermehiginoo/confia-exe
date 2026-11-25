@@ -784,6 +784,27 @@ img {
   background: var(--tinta);
 }
 
+.aviso--conquista .aviso__topo {
+  background: var(--verde);
+  color: var(--tinta);
+}
+
+/* Parece texto comum de propósito: só quem lê acha. */
+.clausula-premio {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.clausula-premio:focus-visible {
+  outline: 3px solid var(--rosa);
+  outline-offset: 2px;
+}
+
 .aviso__fechar {
   margin-left: auto;
   width: 32px;

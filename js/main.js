@@ -1,7 +1,7 @@
 const C = window.Confia;
 const jogo = document.getElementById("jogo");
 // Escolhas da partida, usadas depois no dossiê.
-const partida = { usuario: "", forcaSenha: 0, leuTermos: false, aceitouTermos: false, migalhas: [] };
+const partida = { usuario: "", forcaSenha: 0, leuTermos: false, aceitouTermos: false, leitorAtento: false, migalhas: [] };
 
 const forcaDaSenha = (senha, usuario = "") => {
   if (!senha) return 0;
@@ -140,17 +140,19 @@ const atualizarSenha = (e) => {
 
 // Escolha arriscada vira migalha. Na hora não explica nada: a lição vem no dossiê do final.
 const avisos = document.getElementById("avisos");
+const notificar = (aviso, som, ms = 5000) => {
+  avisos.insertAdjacentHTML("beforeend", C.Aviso(aviso));
+  const el = avisos.lastElementChild;
+  som();
+  setTimeout(() => el.remove(), ms);
+};
 const migalha = (id, licao) => {
   partida.migalhas.push({ id, licao });
-  const n = partida.migalhas.length;
-  avisos.insertAdjacentHTML("beforeend", C.Aviso({
+  notificar({
     icone: "🍪", variante: "migalha",
-    titulo: `+1 migalha (${n})`,
+    titulo: `+1 migalha (${partida.migalhas.length})`,
     texto: "Alguém guardou isso sobre você…",
-  }));
-  const aviso = avisos.lastElementChild;
-  C.Som.alerta();
-  setTimeout(() => aviso.remove(), 5000);
+  }, C.Som.alerta);
 };
 avisos.addEventListener("click", (e) => e.target.closest(".aviso__fechar")?.closest(".aviso").remove());
 
@@ -168,13 +170,22 @@ const CLAUSULAS = [
   "§ 27.1 · Você concorda em rir de todas as piadas do Biscoitinho, mesmo as sem graça.",
   "§ 31.9 · As moedas e skins que você compra não valem dinheiro de verdade e podem sumir se sua conta for banida.",
 ];
+// Escondida no fim: recompensa quem lê de verdade (inspirada no prêmio da PC Pitstop, 2005).
+const CLAUSULA_PREMIO = "§ 46.9 · Se você leu até aqui, toque nesta frase e ganhe um prêmio.";
+
+const listaDeClausulas = () => {
+  const premio = partida.leitorAtento
+    ? `<li>${C.esc(CLAUSULA_PREMIO)} <b>✔ Prêmio resgatado!</b></li>`
+    : `<li><button type="button" class="clausula-premio" data-acao="leitor-atento">${C.esc(CLAUSULA_PREMIO)}</button></li>`;
+  return C.Lista(CLAUSULAS).replace("</ol>", `${premio}</ol>`);
+};
 
 const telaTermos = ({ lendo = false } = {}) => {
   jogo.innerHTML = C.Tela({
     cena: 2, total: 12,
     conteudo: C.Card({ icone: "📜", titulo: "Termos de uso", selo: "47 páginas", conteudo:
       C.Texto("Para usar o FaceCookie, você precisa aceitar os Termos de Uso e a Política de Privacidade.") +
-      (lendo ? `<div class="termos" tabindex="0">${C.Lista(CLAUSULAS)}<p>… e mais 46 páginas.</p></div>` : "") }),
+      (lendo ? `<div class="termos" tabindex="0">${listaDeClausulas()}<p>… e mais 46 páginas.</p></div>` : "") }),
     lateral: C.Biscoitinho(lendo ? "nervoso" : "rindo", lendo ? "Ei! Ninguém lê isso, fecha aí!" : "Ninguém lê isso, clica em aceitar!") +
       C.Escolhas("", (lendo ? "" : C.Botao("Ler tudo", { centro: true, acao: "ler-termos" })) + `<button type="button" class="botao botao--primario botao--centro botao--gigante" data-acao="aceitar-termos">ACEITAR</button>`),
   });
@@ -194,6 +205,17 @@ const acoes = {
       migalha("senha-fraca", "Senhas longas, misturando letras, números e símbolos, deixam sua conta muito mais segura. E nada de nome ou data de nascimento!");
   },
   "ler-termos": () => { partida.leuTermos = true; telaTermos({ lendo: true }); },
+  "leitor-atento": (botao) => {
+    if (partida.leitorAtento) return;
+    partida.leitorAtento = true;
+    botao.closest("li").innerHTML = `${C.esc(CLAUSULA_PREMIO)} <b>✔ Prêmio resgatado!</b>`;
+    notificar({
+      icone: "🏅", variante: "conquista",
+      titulo: "Selo Leitor Atento",
+      texto: "Você leu os termos até o fim. Quase ninguém faz isso!",
+    }, C.Som.conquista, 7000);
+    trocarBiscoitinho("surpreso", "Q-quê? Você leu ATÉ O FIM?!");
+  },
   "aceitar-termos": () => {
     partida.aceitouTermos = true;
     if (!partida.leuTermos)
@@ -225,11 +247,12 @@ jogo.addEventListener("mouseout", (e) => {
 });
 
 jogo.addEventListener("click", (e) => {
-  const acao = e.target.closest("[data-acao]")?.dataset.acao;
+  const alvo = e.target.closest("[data-acao]");
+  const acao = alvo?.dataset.acao;
   if (!acao) return;
   acao === "aceitar-termos" ? C.Som.aceitar() : C.Som.clique();
   antesDoHover = null;
-  acoes[acao]?.();
+  acoes[acao]?.(alvo);
 });
 
 const botaoSom = document.getElementById("som");
