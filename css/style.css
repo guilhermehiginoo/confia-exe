@@ -702,3 +702,10 @@ img {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+.medidor--fraca .medidor__valor {
+  background: var(--rosa);
+}
+
+.medidor--media .medidor__valor {
+  background: var(--laranja);
+}

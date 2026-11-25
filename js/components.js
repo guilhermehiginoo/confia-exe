@@ -63,8 +63,8 @@
 
   const Lista = (itens) => `<ol class="lista">${itens.map((i) => `<li>${esc(i)}</li>`).join("")}</ol>`;
 
-  const Medidor = (rotulo, valor) => `
-    <div class="medidor">${esc(rotulo)}
+  const Medidor = (rotulo, valor, { variante = "" } = {}) => `
+    <div class="medidor${variante ? ` medidor--${esc(variante)}` : ""}">${esc(rotulo)}
       <span class="medidor__trilho" role="meter" aria-label="${esc(rotulo)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${+valor}">
         <span class="medidor__valor" style="width:${Math.max(0, Math.min(100, valor))}%"></span>
       </span>
