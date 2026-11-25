@@ -64,6 +64,56 @@ const telaInicio = () => {
   });
 };
 
+// Prólogo: carregando e a apresentação do Biscoitinho, que ganha a confiança do jogador com uma dica verdadeira.
+const telaCarregando = () => {
+  jogo.innerHTML = C.Capa({ emocao: "sono", logoPequeno: true, conteudo: C.Carregando(0) });
+  const barra = jogo.querySelector(".carregando__barra");
+  const frase = jogo.querySelector(".capa__frase");
+  let pct = 0;
+  const passo = setInterval(() => {
+    pct = Math.min(100, pct + 4 + Math.round(Math.random() * 8));
+    barra.style.width = `${pct}%`;
+    barra.parentElement.setAttribute("aria-valuenow", pct);
+    frase.textContent = `Preparando migalhas… ${pct}%`;
+    if (pct === 100) { clearInterval(passo); setTimeout(() => telaApresentacao(0), 400); }
+  }, 120);
+};
+
+const APRESENTACAO = [
+  ["animado", "Oi! Eu sou o Biscoitinho, o assistente oficial do FaceCookie!"],
+  ["confiante", "Vou te ajudar a criar sua conta e a fazer um monte de amigos por aqui."],
+  ["timido", "Uma dica de amigo: quando aparecer uma atualização no celular, instala. Ela conserta falhas de segurança."],
+  ["rindo", "Viu? Pode confiar em mim. Bora criar sua conta?"],
+];
+
+const telaApresentacao = (i) => {
+  const ultima = i === APRESENTACAO.length - 1;
+  jogo.innerHTML = C.Tela({
+    conteudo: C.Card({ icone: "🍪", titulo: "Bem-vindo ao FaceCookie", selo: `${i + 1} de ${APRESENTACAO.length}`, conteudo:
+      C.Titulo("Biscoitinho ✔") +
+      C.Texto("Assistente oficial do FaceCookie. Está aqui pra te ajudar em tudo.") +
+      `<ul class="perfil">
+        <li><b>1,2 mi</b> amigos</li>
+        <li><b>100%</b> confiável</li>
+        <li><b>24h</b> online</li>
+      </ul>` }),
+    lateral: C.Biscoitinho(...APRESENTACAO[i]) +
+      C.Escolhas("", C.Botao(ultima ? "Criar minha conta" : "Próximo →", { primario: true, centro: true, acao: ultima ? "ir-cadastro" : "proxima-fala" })),
+  });
+  jogo.dataset.fala = i;
+};
+
+// Avança a fala no lugar (sem redesenhar a tela) pro Biscoitinho não piscar.
+const proximaFala = () => {
+  const i = +jogo.dataset.fala + 1;
+  const ultima = i === APRESENTACAO.length - 1;
+  jogo.dataset.fala = i;
+  trocarBiscoitinho(...APRESENTACAO[i]);
+  jogo.querySelector(".card__selo").textContent = `${i + 1} de ${APRESENTACAO.length}`;
+  const botao = jogo.querySelector("[data-acao=proxima-fala]");
+  if (ultima) { botao.textContent = "Criar minha conta"; botao.dataset.acao = "ir-cadastro"; }
+};
+
 const telaCadastro = () => {
   jogo.innerHTML = C.Tela({
     cena: 1, total: 12,
@@ -133,7 +183,9 @@ const telaTermos = ({ lendo = false } = {}) => {
 };
 
 const acoes = {
-  jogar: telaCadastro,
+  jogar: telaCarregando,
+  "proxima-fala": proximaFala,
+  "ir-cadastro": telaCadastro,
   "criar-conta": () => {
     const usuario = document.getElementById("usuario");
     if (!usuario.value.trim()) return usuario.focus();

@@ -468,6 +468,11 @@ img {
     gap: 10px;
   }
 
+  /* Tela sem topo (prólogo): espaço pro botão de som não cobrir o card. */
+  .tela__corpo:first-child .tela__conteudo {
+    padding-top: calc(68px + env(safe-area-inset-top, 0px));
+  }
+
   .card__topo {
     padding: 8px 12px;
   }
@@ -806,6 +811,28 @@ img {
   from {
     transform: translateX(110%);
   }
+}
+
+.perfil {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.perfil li {
+  display: grid;
+  justify-items: center;
+  padding: 8px 4px;
+  border: 3px solid var(--tinta);
+  background: var(--lilas);
+  font-size: 13px;
+}
+
+.perfil b {
+  font: 700 20px var(--fonte-titulo);
 }
 
 .visualmente-oculto {
