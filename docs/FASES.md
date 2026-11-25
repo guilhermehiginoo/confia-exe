@@ -65,30 +65,29 @@ Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ ag
 3. **Verificação em duas etapas:** "Agora não, né? Que preguiça!"
 4. **Termos de uso (47 páginas):** botão "Aceitar" enorme e um botão "Ler tudo" ao lado. "Ninguém lê isso, clica em aceitar!" No "Ler tudo": "Ih, são 47 páginas… vai demorar uma eternidade."
    - Quem lê joga o minijogo da lupa e procura as cláusulas sérias no meio das absurdas e de texto chato de propósito. O perigo de verdade fica escondido entre as piadas.
-   - **Absurdas, mas aconteceram de verdade** (o humor, e a prova de que ninguém lê):
+   - **Absurdas** (leves e engraçadas, sem nada pesado; provam que ninguém lê):
 
      | Cláusula no jogo | De onde vem |
      |---|---|
+     | O FaceCookie pode farmar aura com a sua conta, e a aura é dele | Meme da turma |
+     | Fazer o gesto do "67" toda vez que alguém disser "67" | Meme da turma (trocar quando envelhecer) |
      | Entregar metade do lanche do recreio toda sexta | Inventada pro jogo (volta no final) |
-     | Entregar sua alma imortal | GameStation, loja de games inglesa: em 2010, como pegadinha de 1º de abril, pôs isso nos termos da loja online e milhares de clientes aceitaram |
-     | Ceder seu primeiro filho | Experimento da F-Secure em 2014: um Wi-Fi grátis em Londres pedia o primeiro filho nos termos, e gente aceitou |
-     | 1.000 horas de serviço comunitário, limpando banheiro químico | Experimento da Purple, empresa de Wi-Fi, em 2017: cerca de 22 mil pessoas aceitaram |
-     | Não usar o app pra fabricar armas nucleares, químicas ou biológicas | Termos do iTunes, da Apple, tinham essa proibição |
+     | 1.000 horas de serviço comunitário: abraçar gatos de rua, raspar chiclete, pintar conchas de caracol | Experimento da Purple, empresa de Wi-Fi, em 2017: cerca de 22 mil pessoas aceitaram uma cláusula assim (conferir a lista de tarefas original) |
+     | Rir de todas as piadas do Biscoitinho | Inventada pro jogo |
 
    - **Sérias** (aparecem em termos e políticas de privacidade de apps conhecidos; ao achar uma, aparece o que ela significa):
 
      | Cláusula no jogo | Inspirada em | O que ensina |
      |---|---|---|
-     | Licença mundial e gratuita pra usar, copiar, modificar e distribuir o que você posta | Termos do Instagram | Postar dá ao app o direito de usar sua foto |
+     | Licença mundial e gratuita pra usar, copiar e modificar o que você posta | Termos do Instagram | Postar dá ao app o direito de usar sua foto |
      | Usar seu nome e foto de perfil em anúncios, sem pagar | Termos do Facebook | Você pode virar propaganda sem saber |
      | Ler seus contatos e mandar convites em seu nome | Comum em apps de rede social | Permissões: o app fala com seus amigos como se fosse você |
      | Usar sua localização com o app fechado | Permissão de localização "sempre" | Localização em segundo plano revela casa, escola e rotina |
-     | Coletar dados do rosto, da voz e do jeito de digitar | Política de privacidade do TikTok (EUA, 2021) | Até seu jeito de digitar identifica você |
-     | Compartilhar dados com empresas do grupo e parceiros | Atualização do WhatsApp em 2021, que gerou muita polêmica | "Parceiros" são outras empresas; seus dados circulam |
-     | Guardar dados mesmo depois de apagar a conta | Comum em políticas de privacidade | Apagar a conta não apaga tudo |
-     | Mudar os termos sem avisar; continuar usando é concordar | Comum em quase todos os termos | Aceitar uma vez vale também para as mudanças |
+     | Coletar dados do rosto, da voz e de como você digita | Política de privacidade do TikTok (EUA, 2021) | Até a velocidade dos seus toques identifica você (biometria) |
+     | Moedas e skins compradas não valem dinheiro e somem se a conta for banida | Termos de jogos grátis (Free Fire, Supercell etc.) | Dinheiro gasto em jogo compra um serviço, não um produto seu |
      | Usamos cookies para acompanhar o que você faz em outros sites (só no doc, prepara a revelação) | Banners de cookies | O Biscoitinho é um cookie de rastreamento |
 
+   - Ficaram de fora da tela, mas entram na revisão final: dados guardados mesmo depois de apagar a conta, compartilhamento com "empresas do grupo" (polêmica do WhatsApp em 2021) e termos que mudam sem avisar.
    - Os textos do jogo são reescritos e adaptados ao FaceCookie, não cópias dos termos originais.
    - O Biscoitinho desdenha das reais ("isso é normal, todo app faz") e ri das absurdas.
    - Fechamento: "Você não precisa ler 47 páginas. Procure as palavras *dados*, *compartilhar*, *localização* e *excluir*."
@@ -234,7 +233,7 @@ Por turnos. O jogador começa com **2 corações + 1 por fase bem resolvida**. O
 
 Os dois levam às mesmas telas:
 1. O que são cookies de verdade, em linguagem simples. Nos aplicativos, o mesmo papel é do identificador de publicidade (IDFA no iPhone, ID de publicidade no Android) e das bibliotecas de anúncio embutidas nos apps. Dica pra levar pra casa: "Pedir ao app para não rastrear" no iPhone, ou excluir o ID de publicidade nas configurações do Android.
-2. Revisão das escolhas de cada fase, com a lição. Na fase 1, um "Sabia que?" com as histórias reais dos termos: a alma da GameStation, o primeiro filho da F-Secure e os banheiros da Purple.
+2. Revisão das escolhas de cada fase, com a lição. Na fase 1, um "Sabia que?" com histórias reais e leves dos termos: as 22 mil pessoas que aceitaram abraçar gatos e raspar chiclete (Purple).
 3. Perguntas pra conversar em sala: "Por que o Biscoitinho parecia confiável?", "Quem ganha com os seus dados?".
 
 Quem aceitou os termos sem ler recebe uma última notificação: "Hoje é sexta! Entregue metade do seu lanche ao FaceCookie."

@@ -154,21 +154,19 @@ const migalha = (id, licao) => {
 };
 avisos.addEventListener("click", (e) => e.target.closest(".aviso__fechar")?.closest(".aviso").remove());
 
-// Inspiradas em termos e experimentos reais (fontes no docs/FASES.md, fase 1).
+// Absurdas leves e sérias que existem em apps de verdade (fontes no docs/FASES.md, fase 1).
 const CLAUSULAS = [
+  "§ 2.4 · O FaceCookie pode farmar aura usando a sua conta. Toda aura farmada por você pertence ao FaceCookie.",
   "§ 3.1 · O usuário entrega metade do lanche do recreio ao FaceCookie toda sexta-feira.",
-  "§ 4.7 · Você dá ao FaceCookie uma licença mundial e gratuita para usar, copiar, modificar e distribuir tudo o que você posta.",
-  "§ 6.2 · Você concorda em fazer 1.000 horas de serviço comunitário, incluindo limpar banheiros químicos de festival.",
+  "§ 4.7 · Você dá ao FaceCookie uma licença mundial e gratuita para usar, copiar e modificar tudo o que você posta.",
+  "§ 6.7 · Toda vez que alguém disser \"67\", você é obrigado a fazer o gesto com as mãos.",
   "§ 7.4 · O FaceCookie pode ler seus contatos e mandar convites em seu nome.",
   "§ 9.1 · Podemos usar seu nome e sua foto de perfil em anúncios, sem te pagar nada.",
-  "§ 11.3 · Você não pode usar o FaceCookie para fabricar armas nucleares, químicas ou biológicas.",
   "§ 15.3 · Podemos usar sua localização mesmo com o app fechado.",
-  "§ 17.8 · Podemos coletar dados do seu rosto e da sua voz nas fotos e vídeos que você posta, e até o jeito como você digita.",
-  "§ 19.2 · Seus dados podem ser compartilhados com outras empresas do grupo FaceCookie e com parceiros.",
-  "§ 23.6 · Você cede ao FaceCookie o seu primeiro filho, pela eternidade.",
-  "§ 31.6 · Você entrega ao FaceCookie a sua alma imortal.",
-  "§ 38.4 · Mesmo que você apague a conta, guardamos seus dados por tempo indeterminado.",
-  "§ 47.0 · Podemos mudar estes termos sem avisar. Continuar usando significa concordar.",
+  "§ 18.5 · Você concorda em fazer 1.000 horas de serviço comunitário: abraçar gatos de rua, raspar chiclete da calçada e pintar conchas de caracol.",
+  "§ 22.6 · Podemos coletar dados do seu rosto, da sua voz e de como você digita (a velocidade dos seus toques na tela).",
+  "§ 27.1 · Você concorda em rir de todas as piadas do Biscoitinho, mesmo as sem graça.",
+  "§ 31.9 · As moedas e skins que você compra não valem dinheiro de verdade e podem sumir se sua conta for banida.",
 ];
 
 const telaTermos = ({ lendo = false } = {}) => {
