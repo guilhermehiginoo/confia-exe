@@ -131,9 +131,31 @@ const acoes = {
   },
 };
 
+// No PC, o Biscoitinho reage quando o mouse passa por cima de certos botões.
+const REACOES_HOVER = {
+  "aceitar-termos": ["animado", "Isso! Clica! Clica logo!"],
+  "ler-termos": ["sono", "Ih, são 47 páginas… vai demorar uma eternidade."],
+};
+let antesDoHover = null;
+jogo.addEventListener("mouseover", (e) => {
+  const botao = e.target.closest("[data-acao]");
+  const reacao = REACOES_HOVER[botao?.dataset.acao];
+  if (!reacao || antesDoHover || !matchMedia("(hover: hover)").matches) return;
+  const img = jogo.querySelector(".biscoitinho__img");
+  antesDoHover = [img?.src.split("/").pop().replace(".png", ""), jogo.querySelector(".fala")?.textContent.replace(/^Biscoitinho:\s*/, "")];
+  trocarBiscoitinho(...reacao);
+});
+jogo.addEventListener("mouseout", (e) => {
+  const botao = e.target.closest("[data-acao]");
+  if (!antesDoHover || !REACOES_HOVER[botao?.dataset.acao] || botao.contains(e.relatedTarget)) return;
+  trocarBiscoitinho(...antesDoHover);
+  antesDoHover = null;
+});
+
 jogo.addEventListener("click", (e) => {
   const acao = e.target.closest("[data-acao]")?.dataset.acao;
   if (!acao) return;
+  antesDoHover = null;
   acoes[acao]?.();
 });
 
