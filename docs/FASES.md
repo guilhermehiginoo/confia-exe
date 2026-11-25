@@ -233,8 +233,8 @@ Por turnos. O jogador começa com **2 corações + 1 por fase bem resolvida**. O
 - **Final Biscoitado (derrota):** o Biscoitão engole a tela ("Obrigado pelas migalhas!").
 
 Os dois levam às mesmas telas:
-1. O que são cookies de verdade, em linguagem simples.
-2. Revisão das escolhas de cada fase, com a lição.
+1. O que são cookies de verdade, em linguagem simples. Nos aplicativos, o mesmo papel é do identificador de publicidade (IDFA no iPhone, ID de publicidade no Android) e das bibliotecas de anúncio embutidas nos apps. Dica pra levar pra casa: "Pedir ao app para não rastrear" no iPhone, ou excluir o ID de publicidade nas configurações do Android.
+2. Revisão das escolhas de cada fase, com a lição. Na fase 1, um "Sabia que?" com as histórias reais dos termos: a alma da GameStation, o primeiro filho da F-Secure e os banheiros da Purple.
 3. Perguntas pra conversar em sala: "Por que o Biscoitinho parecia confiável?", "Quem ganha com os seus dados?".
 
 Quem aceitou os termos sem ler recebe uma última notificação: "Hoje é sexta! Entregue metade do seu lanche ao FaceCookie."
