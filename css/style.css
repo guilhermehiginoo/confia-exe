@@ -60,25 +60,32 @@ img {
   container-type: inline-size;
 }
 
+/* No celular o corpo inteiro rola (conteúdo + Biscoitinho) e só os botões ficam presos embaixo. */
 .tela__corpo {
   flex: 1;
   min-height: 0;
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
 
 .tela__conteudo {
-  flex: 1;
-  overflow: auto;
-  padding: 16px;
+  flex: none;
+  padding: 16px 16px 24px;
   display: grid;
   gap: 14px;
   align-content: start;
 }
 
+/* Biscoitinho e botões presos embaixo: ele fica visível enquanto o jogador digita. */
 .tela__lateral {
+  flex: 1 0 auto;
+  position: sticky;
+  bottom: 0;
+  background: var(--laranja);
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 .topo {
@@ -442,6 +449,76 @@ img {
   margin: 0;
 }
 
+/* Celular: tudo mais compacto pra caber numa tela de 667px sem cortar o card. */
+@container (max-width: 899px) {
+  .topo {
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+    padding-bottom: 10px;
+    gap: 6px;
+  }
+
+  .progresso {
+    height: 12px;
+  }
+
+  .tela__conteudo {
+    padding: 12px 16px 16px;
+    gap: 10px;
+  }
+
+  .card__topo {
+    padding: 8px 12px;
+  }
+
+  .card__corpo {
+    padding: 12px;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .card__corpo .dica {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .campo {
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .campo__input {
+    min-height: 44px;
+  }
+
+  .biscoitinho__img {
+    width: 88px;
+  }
+
+  .fala {
+    margin-bottom: 18px;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .escolhas {
+    padding: 10px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  .botao {
+    min-height: 52px;
+  }
+}
+
+/* Teclado aberto no celular: o campo digitado rola pra cima do Biscoitinho, que não se mexe. */
+@container (max-width: 899px) {
+  .tela:has(.campo__input:focus) .tela__corpo {
+    scroll-padding-bottom: 220px;
+  }
+}
+
 @container (min-width: 900px) {
   .topo {
     padding: 18px 32px;
@@ -463,56 +540,79 @@ img {
     height: 18px;
   }
 
+  /* Desktop: card à esquerda, Biscoitinho em pé no laranja à direita, botões embaixo do card. */
   .tela__corpo {
-    flex-direction: row;
-  }
-
-  .tela__conteudo {
-    padding: 40px;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 720px) 340px;
+    grid-template-rows: auto auto;
     align-content: center;
-    justify-items: center;
-  }
-
-  .tela__conteudo>* {
-    width: 100%;
-    max-width: 720px;
-  }
-
-  .tela__conteudo>.etiqueta {
-    width: auto;
-    justify-self: start;
-    margin-left: max(0px, calc((100% - 720px) / 2));
+    justify-content: center;
+    column-gap: 56px;
+    padding: 40px;
   }
 
   .tela__lateral {
-    width: 440px;
-    flex: none;
-    background: var(--lilas);
-    border-left: var(--borda);
-    justify-content: flex-end;
+    display: contents;
+  }
+
+  .tela__conteudo {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0;
+    gap: 20px;
   }
 
   .biscoitinho {
-    flex: 1;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 24px;
+    gap: 16px;
+    padding: 0;
   }
 
   .biscoitinho__img {
-    width: 220px;
+    width: 240px;
     order: 2;
   }
 
+  /* Balão com tamanho fixo: trocar a fala não mexe no resto da tela. */
   .fala {
-    margin: 0 0 8px;
+    position: relative;
+    margin: 0;
     font-size: 18px;
+    width: 100%;
+    min-height: 124px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Rabinho do balão apontando pro Biscoitinho. */
+  .fala::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -18px;
+    width: 24px;
+    height: 24px;
+    background: var(--lilas);
+    border-right: var(--borda);
+    border-bottom: var(--borda);
+    transform: translateX(-50%) rotate(45deg);
   }
 
   .escolhas {
-    padding: 24px;
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 28px;
+    padding: 0;
+    background: none;
+    border-top: 0;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: stretch;
   }
 
   .card__corpo {
