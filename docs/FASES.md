@@ -1,117 +1,138 @@
 # Confia? · Fases
 
-Adaptação do roteiro do Drive ("Confia? Roteiro do jogo") para o FaceCookie. Em cada fase: onde ela acontece no app, o que o Biscoitinho fala, o que o jogador pode fazer e a lição.
+Roteiro do jogo no FaceCookie, na ordem em que as coisas acontecem num app de verdade. Baseado no roteiro do Drive ("Confia? Roteiro do jogo"), com estas mudanças:
+
+- Os termos de uso absurdos entram no cadastro (o QuizMania deixa de ser uma fase separada).
+- O desconhecido não conversa com o jogador: ele só manda o link do golpe.
+- Clicar no link abre uma chuva de spam.
+- Toda escolha arriscada vira migalha no dossiê do Biscoitinho.
+
+Regra da história: **cada escolha do começo volta mais tarde**, piorando ou salvando a situação.
 
 Legenda dos caminhos: 🍪 seguir o Biscoitinho · 🔍 investigar · 🛡️ agir com segurança.
 
 | # | Fase | Tema | Volta depois? |
 |---|---|---|---|
 | 0 | Prólogo | Confiança no Biscoitinho | — |
-| 1 | O cadastro | Senha e verificação em duas etapas | Sim, na fase 5 |
-| 2 | O perfil | Dados pessoais e desconhecidos | Vira migalhas |
-| 3 | O QuizMania | Termos de uso e permissões | Sim, nos finais |
-| 4 | O link | Golpe de prêmio | — |
-| 5 | O pedido do Lucas | Conta roubada e código de verificação | — |
-| — | A revelação | O dossiê do Biscoitinho | — |
+| 1 | Criar a conta | Senha, verificação em duas etapas, termos de uso | Fase 5, dossiê e finais |
+| 2 | O perfil | Dados pessoais | Dossiê |
+| 3 | Primeiro post | Exposição e pedido de desconhecido | Fase 4 |
+| 4 | O link do desconhecido | Golpe de sorteio e spam | Dossiê e batalha |
+| 5 | O pedido do Lucas | Conta roubada e código de verificação | Dossiê |
+| — | A revelação | O dossiê | — |
 | — | A batalha final | Revisão de tudo | — |
-| — | Finais | Debrief em sala | — |
+| — | Finais | Conversa em sala | — |
 
 ---
 
 ## 0 · Prólogo
 
-**Onde:** tela de Início → Carregando ("Preparando migalhas…") → boas-vindas.
+**Onde:** Início → Carregando ("Preparando migalhas…") → boas-vindas.
 
 - O Biscoitinho se apresenta como "assistente oficial do FaceCookie".
-- Dá a dica verdadeira: "quando aparecer atualização, instala". Serve pra ganhar a confiança do jogador.
+- Dá uma dica verdadeira ("quando aparecer atualização, instala") pra ganhar a confiança do jogador.
 - Chama pra criar a conta.
 
-## 1 · O cadastro
+## 1 · Criar a conta
 
-**Onde:** tela "Criar conta no FaceCookie", com o aviso "Isto é um jogo. Invente seu usuário e sua senha."
+**Onde:** "Criar conta no FaceCookie", com o aviso "Isto é um jogo. Invente seu usuário e sua senha."
 
-- **Usuário:** escolher entre três sugestões (nome com ano de nascimento, nome com escola, apelido criativo). O Biscoitinho empurra o primeiro.
-- **Senha:** medidor fraca/média/forte. O Biscoitinho: "Coloca 123456, o medidor é exagerado."
-- **Verificação em duas etapas:** "Agora não, né? Que preguiça!"
+1. **Usuário:** três sugestões (nome com ano de nascimento, nome com escola, apelido criativo). O Biscoitinho empurra o primeiro.
+2. **Senha:** medidor fraca/média/forte. "Coloca 123456, o medidor é exagerado."
+3. **Verificação em duas etapas:** "Agora não, né? Que preguiça!"
+4. **Termos de uso (47 páginas):** botão "Aceitar" enorme, link "ler termos" minúsculo. "Ninguém lê isso, clica em aceitar!"
+   - Quem lê joga o minijogo da lupa e acha 3 cláusulas, umas absurdas e outras sérias:
+     - absurdas: metade do lanche do recreio toda sexta; o FaceCookie escolhe o nome do seu próximo bichinho; seu primeiro filho se chamará Cookie Júnior;
+     - sérias: o app pode ler seus contatos e mandar convites em seu nome; seus dados podem ser compartilhados com parceiros.
 
 Caminhos:
-- 🍪 Senha fraca e verificação desligada.
-- 🔍 Abrir "Como fazer uma senha forte?" (Biscoitinho: "Ih, leitura… que chato.").
-- 🛡️ Senha forte e verificação ligada (Biscoitinho emburrado).
+- 🍪 Senha fraca, verificação desligada, aceitar sem ler.
+- 🔍 Abrir "Como fazer uma senha forte?" e ler os termos.
+- 🛡️ Senha forte, verificação ligada, ler os termos antes de aceitar.
 
-**Lição:** senhas longas, sem dados pessoais e diferentes em cada serviço; a verificação em duas etapas protege mesmo se a senha vazar.
+**Lição:** senhas longas e sem dados pessoais, verificação em duas etapas ligada, e termos lidos antes de aceitar.
 
 ## 2 · O perfil
 
-**Onde:** logo depois do cadastro. Notificação: "12 colegas da sua turma já estão no FaceCookie!". Primeira tarefa: completar o perfil.
+**Onde:** logo depois do cadastro. "12 colegas da sua turma já estão no FaceCookie! Complete seu perfil."
 
-O formulário mistura campos normais, sensíveis e absurdos, todos com **dados fictícios já preenchidos**. Para cada um, o jogador escolhe **Mostrar** ou **Esconder**. Uma barra de "perfil 100% completo" sobe a cada campo mostrado, e o Biscoitinho comemora.
+Todos os campos vêm com **dados fictícios já preenchidos**. Para cada um, o jogador escolhe **Mostrar** ou **Esconder**. Uma barra de "perfil 100% completo" sobe a cada campo mostrado, e o Biscoitinho comemora.
 
 | Tipo | Campos |
 |---|---|
-| Normais (pode mostrar) | Apelido, foto ou avatar, bio, interesses |
+| Normais (pode mostrar) | Apelido, avatar, bio, interesses |
 | Sensíveis (melhor esconder) | Nome completo, data de nascimento completa, cidade, escola, telefone |
-| Absurdos (nenhuma rede séria pede) | CPF ou foto do documento, senha do e-mail "pra achar amigos", endereço completo, nome da mãe, cartão dos pais "pro selo verificado", localização sempre ligada, turma e horário de saída da escola, "que horas você fica sozinho em casa?" |
+| Absurdos (nenhuma rede séria pede) | CPF ou foto do documento, senha do e-mail "pra achar amigos", endereço completo, nome da mãe, cartão dos pais "pro selo verificado", localização sempre ligada, turma e horário de saída da escola |
 
-Os campos absurdos vêm com asterisco de "obrigatório", mas dá pra pular. O jogador aprende que nem todo asterisco é verdade.
+Os campos absurdos vêm com asterisco de "obrigatório", mas dá pra pular.
 
-Depois do perfil:
-- **Público ou privado.** Biscoitinho: "Privado é coisa de quem tem algo a esconder, kkk."
-- **Primeiro post**, escolhendo entre três fotos: selfie de uniforme com o nome da escola no muro, o gato dormindo ou um pôr do sol. Biscoitinho: "Posta a do uniforme e coloca 'saindo da escola agora'!"
-- **Lucas** começa a seguir e comenta "kkkkk mano q foto". Isso volta na fase 5.
-- **Pedido de amizade de Gamer_Pro_17.** Biscoitinho: "Aceita! Quanto mais seguidor, melhor."
+Por último: **perfil público ou privado?** "Privado é coisa de quem tem algo a esconder, kkk."
 
 Caminhos:
-- 🍪 Mostrar tudo, postar a selfie com localização, aceitar o desconhecido.
-- 🔍 "Ver como um desconhecido vê" (mostra escola, bairro e aniversário juntos) ou abrir o perfil do Gamer_Pro_17 (conta criada ontem, sem posts, sem amigos em comum).
-- 🛡️ Perfil privado, mostrar pouco, postar o gato ou o pôr do sol, recusar o pedido.
-
-Cada campo sensível ou absurdo mostrado vira uma migalha.
+- 🍪 Mostrar tudo e deixar público.
+- 🔍 "Ver como um desconhecido vê": mostra escola, bairro e aniversário juntos.
+- 🛡️ Mostrar só o necessário e deixar privado.
 
 **Lição:** um dado sozinho parece inofensivo, mas escola, bairro, horário e localização juntos dizem onde encontrar você.
 
-## 3 · O QuizMania
+## 3 · Primeiro post
 
-**Onde:** post patrocinado no feed: "Que biscoito você seria? Descubra no QuizMania!". Abre como app parceiro dentro do FaceCookie.
+**Onde:** "Faça seu primeiro post!"
 
-- Tela "Termos de Uso (47 páginas)", com um botão Aceitar enorme e o link "ler termos" minúsculo.
-- Quem lê joga um minijogo de lupa e precisa achar 3 cláusulas: umas absurdas (metade do lanche do recreio toda sexta, o primeiro filho se chamar QuizMania Júnior) e outras sérias (acessar contatos e mandar convites em seu nome, compartilhar dados com parceiros).
-- Depois pede câmera, microfone, localização, contatos e fotos. Biscoitinho: "Liga tudo, senão o quiz não funciona!"
-
-Caminhos:
-- 🍪 Aceitar sem ler e liberar tudo.
-- 🔍 Ler os termos e achar as cláusulas.
-- 🛡️ Negar as permissões e ver que o quiz funciona igual.
-
-Resultado do quiz: "Você é um Cookie de Chocolate!" (Biscoitinho: "Hehe, igual a mim!").
-
-**Lição:** termos de uso dizem o que o app pode fazer com seus dados. Leia antes e libere só o que faz sentido.
-
-## 4 · O link
-
-**Onde:** mensagem direta no FaceCookie, de "Pixel Legends Oficial": "PARABÉNS!!! Vc ganhou 1000 GEMAS!!! Resgate em até 10 minutos: pixellegends.gemasgratis.xyz/resgate". Um cronômetro começa a correr.
-
-Biscoitinho: "Corre! Eu já resgatei as minhas!"
+- Três fotos prontas: selfie de uniforme com o nome da escola no muro, o gato dormindo ou um pôr do sol. "Posta a do uniforme e coloca 'saindo da escola agora'!"
+- **Lucas** começa a seguir e comenta "kkkkk mano q foto". O jeito dele escrever importa na fase 5.
+- Chega o **pedido de amizade do Gamer_Pro_17**. "Aceita! Quanto mais seguidor, melhor."
 
 Caminhos:
-- 🍪 Clicar no link e cair numa página de login falsa ("é só colocar sua senha que as gemas caem na hora!").
-- 🔍 Ver que o selo de verificado é só um emoji no nome, ou que o link termina em `gemasgratis.xyz`, ou abrir a página oficial do jogo ("Nenhuma promoção ativa").
-- 🛡️ Apagar ou denunciar a mensagem. Se só esperar, o cronômetro zera e nada acontece: a pressa era o golpe.
+- 🍪 Postar a selfie com localização e aceitar o pedido.
+- 🔍 Abrir o perfil do Gamer_Pro_17: conta criada ontem, sem posts, sem amigos em comum.
+- 🛡️ Postar o gato ou o pôr do sol e recusar o pedido.
 
-**Lição:** pressa, prêmio grátis e remetente estranho são os sinais mais comuns de golpe. Confira o endereço e procure no canal oficial.
+**Lição:** foto também é dado. E quanto mais desconhecido na lista, mais gente vê o que você posta.
+
+## 4 · O link do desconhecido
+
+**Onde:** mensagem do Gamer_Pro_17: "mano, sorteio de skin lendária, corre 😱 skinsgratis.xyz/resgate". Um cronômetro de 10 minutos começa a correr. "Corre! Eu já peguei a minha!"
+
+Onde a mensagem chega depende da fase 3:
+- **Aceitou o pedido:** cai direto no chat, parecendo mensagem de amigo.
+- **Recusou:** cai em "Solicitações de mensagem", com o aviso "Vocês não têm amigos em comum".
+
+Caminhos:
+- 🍪 Clicar no link → **chuva de spam** (abaixo).
+- 🔍 Ver que o link termina em `.xyz` e não no site do jogo, ou abrir a página oficial do jogo ("Nenhuma promoção ativa").
+- 🛡️ Não clicar, bloquear e denunciar. Se só esperar, o cronômetro zera e nada acontece: a pressa era o golpe.
+
+### A chuva de spam
+
+A tela se enche de caixas que vão se empilhando:
+
+- "⚠️ SEU CELULAR TEM 3 VÍRUS"
+- "Você é o visitante 1.000.000! Resgate seu iPhone"
+- "Sua skin está pronta, faça login"
+- "Baixe o Limpador Turbo"
+
+Regras:
+- Os botões chamativos ("Limpar agora", "Resgatar", "OK") abrem **mais** caixas. Alguns pedem senha ou permissão.
+- Alguns "X" são falsos (desenhados dentro da caixa) e também abrem mais spam.
+- O jeito certo de sair é fechar cada caixa pelo X de verdade, sem clicar em mais nada, ou voltar/fechar a página.
+- O Biscoitinho grita o tempo todo: "Clica em Limpar, rápido!"
+- No fim: "Nunca clique dentro de pop-up. Feche e saia."
+
+**Lição:** pressa, prêmio grátis e remetente desconhecido são os sinais mais comuns de golpe. E pop-up não se clica: se fecha.
 
 ## 5 · O pedido do Lucas
 
-**Onde:** mensagem direta da conta do Lucas, escrita diferente do normal: "Olá. Enviei um código para o seu número por engano. Poderia me enviar, por favor? É urgente." Logo depois chega o SMS: "FaceCookie: seu código é 482 913. NÃO compartilhe."
+**Onde:** mensagem da conta do Lucas, escrita diferente do normal: "Olá. Enviei um código para o seu número por engano. Poderia me enviar, por favor? É urgente." Logo depois, o SMS: "FaceCookie: seu código é 482 913. NÃO compartilhe."
 
-Biscoitinho: "É o Lucas, seu parceiro! Ajuda ele." Se o jogador demora, o falso Lucas pede 50 reais no Pix.
+"É o Lucas, seu parceiro! Ajuda ele." Se o jogador demora, o falso Lucas pede 50 reais no Pix.
 
 Caminhos:
 - 🍪 Mandar o código, perder a conta e ver o golpista mandar a mesma mensagem pros seus amigos.
-- 🔍 Comparar com as mensagens antigas (o Lucas de verdade escreve "kkkkk mano") ou ligar pro Lucas ("Não fui eu! Roubaram minha conta!").
+- 🔍 Comparar com o comentário da fase 3 (o Lucas de verdade escreve "kkkkk mano") ou ligar pro Lucas ("Não fui eu! Roubaram minha conta!").
 - 🛡️ Não mandar, avisar o Lucas por outro canal e denunciar.
 
-**Consequência da fase 1:** senha fraca e verificação desligada → "Novo acesso à sua conta em outro aparelho". Verificação ligada → "Alguém tentou entrar, mas a verificação bloqueou" (Biscoitinho: "Argh! Essa tal de duas etapas!").
+**Consequência da fase 1:** senha fraca e verificação desligada → "Novo acesso à sua conta em outro aparelho". Verificação ligada → "Alguém tentou entrar, mas a verificação bloqueou" ("Argh! Essa tal de duas etapas!").
 
 **Lição:** nenhum amigo de verdade precisa do seu código. Pedido estranho, confirme por outro canal.
 
@@ -122,9 +143,27 @@ Caminhos:
 O FaceCookie começa a falhar: o feed se enche de farelos e o Biscoitinho aparece gigante.
 
 - "Eu não sou assistente nenhum. Eu sou um COOKIE. Um cookie de rastreamento."
-- Abre o **dossiê do jogador**, montado com as migalhas: usuário, força da senha, campos do perfil, localização, contatos, permissões e resultado do quiz.
-- Quem foi cuidadoso vê um dossiê quase vazio ("Como assim?! Só isso?!").
-- "E sabe o que eu faço com isso? Vendo."
+- Abre o **dossiê do jogador**, montado com as migalhas da partida.
+- Quem foi cuidadoso vê um dossiê quase vazio: "Como assim?! Só isso?!"
+- "E sabe o que eu faço com isso? Vendo. Pra quem faz anúncio, pra quem aplica golpe."
+
+### O que entra no dossiê
+
+| Fase | Migalha |
+|---|---|
+| 1 | Usuário com nome e ano de nascimento |
+| 1 | Senha fraca |
+| 1 | Verificação em duas etapas desligada |
+| 1 | Termos aceitos sem ler (com a cláusula do lanche) |
+| 2 | Cada campo sensível ou absurdo mostrado (escola, endereço, CPF…) |
+| 2 | Perfil público |
+| 3 | Selfie de uniforme com localização |
+| 3 | Desconhecido aceito |
+| 4 | Clicou no link do desconhecido |
+| 4 | Cada botão de spam clicado ("Limpar agora", "Resgatar", X falso) |
+| 4 | Senha ou permissão entregue no spam |
+| 5 | Código do SMS enviado |
+| 5 | Pix enviado |
 
 ## A batalha final
 
@@ -133,7 +172,7 @@ Por turnos. O jogador começa com **2 corações + 1 por fase bem resolvida**. O
 | Ataque | Defesa certa |
 |---|---|
 | Senha Relâmpago | Senha longa, sem dados pessoais |
-| Chuva de Janelinhas (avisos falsos) | Fechar sem clicar em nada |
+| Chuva de Janelinhas (revanche da fase 4) | Fechar sem clicar em nada |
 | Link Relâmpago | Olhar o final do endereço |
 | Abraço de Amigo ("me passa o código?") | Confirmar por outro canal |
 | Termo Infinito | Ler antes |
@@ -150,20 +189,20 @@ Os dois levam às mesmas telas:
 2. Revisão das escolhas de cada fase, com a lição.
 3. Perguntas pra conversar em sala: "Por que o Biscoitinho parecia confiável?", "Quem ganha com os seus dados?".
 
-Quem aceitou os termos do QuizMania sem ler recebe uma última notificação: "Hoje é sexta! Entregue metade do seu lanche ao QuizMania."
+Quem aceitou os termos sem ler recebe uma última notificação: "Hoje é sexta! Entregue metade do seu lanche ao FaceCookie."
 
 ---
 
 ## Telas e componentes por fase
 
-| Fase | Telas novas | Componentes que faltam |
+| Fase | Telas | Componentes que faltam |
 |---|---|---|
 | Prólogo | Início, Carregando, Boas-vindas | — (já existem `Capa`, `Carregando`, `Dica`) |
-| 1 | Criar conta | Medidor de força da senha, interruptor (verificação) |
-| 2 | Completar perfil, publicar post, pedido de amizade, "ver como desconhecido" | Campo Mostrar/Esconder, barra de perfil completo, Post, Perfil, Pedido de amizade |
-| 3 | Post patrocinado, termos, minijogo da lupa, permissões | Post patrocinado, lista de permissões |
-| 4 | Mensagem direta, página falsa | Mensagem direta, cronômetro |
-| 5 | Mensagem direta, SMS, ligação, alerta de acesso | Notificação, SMS |
+| 1 | Criar conta, Termos, Minijogo da lupa | Medidor de senha, interruptor, termos com botão gigante |
+| 2 | Completar perfil, "Ver como desconhecido" | Campo Mostrar/Esconder, barra de perfil completo |
+| 3 | Publicar post, Pedido de amizade, Perfil de terceiro | Post, Perfil, Pedido de amizade |
+| 4 | Mensagem, Solicitações de mensagem, Chuva de spam | Mensagem direta, cronômetro, pop-up de spam |
+| 5 | Mensagem, SMS, Ligação, Alerta de acesso | Notificação, SMS |
 | Revelação | Dossiê | Dossiê |
-| Batalha | Turnos, banner de cookies | Corações, barra de vida do Biscoitão, banner de cookies |
-| Finais | Final, revisão, perguntas | — |
+| Batalha | Turnos, Banner de cookies | Corações, vida do Biscoitão, banner de cookies |
+| Finais | Final, Revisão, Perguntas | — |
