@@ -25,11 +25,11 @@ O roteiro original está no Drive ("Confia? Roteiro do jogo"). As fases continua
 
 Tudo no jogo (falas, botões, posts, lições) é escrito pra esse público:
 
-- **Situações da vida deles.** Skin e gemas de jogo, foto com o uniforme, colega da turma, grupo da sala, quiz de "que biscoito você seria". Nada de banco, imposto ou e-mail de trabalho.
+- **Situações da vida deles.** Skin e gemas de jogo, foto com o uniforme, colega da turma, grupo da sala, termos de uso absurdos. Nada de banco, imposto ou e-mail de trabalho.
 - **Linguagem de rede social, sem forçar.** Frases curtas, "kkkkk", "mano", emoji onde caberia numa conversa real. Gíria demais envelhece rápido e soa como adulto tentando ser jovem.
 - **Lição em uma frase.** Sem termo técnico sem explicação ("phishing" só aparece junto de "golpe do link falso").
 - **Sem sermão e sem medo.** O jogo mostra a consequência e explica; não culpa o jogador. Errar faz parte e o final sempre ensina.
-- **Humor como isca.** O Biscoitinho é engraçado, e as cláusulas absurdas (metade do lanche, filho chamado QuizMania Júnior) prendem a atenção pra chegar nas sérias.
+- **Humor como isca.** O Biscoitinho é engraçado, e as cláusulas absurdas (metade do lanche, filho chamado Cookie Júnior) prendem a atenção pra chegar nas sérias.
 - **Leitura rápida.** Pouco texto por tela; quem quiser saber mais toca em "por quê?".
 - **Seguro pra sala de aula.** Nada de conteúdo adulto, violência ou golpes que ensinem a aplicar golpe. O foco é reconhecer e se proteger.
 
