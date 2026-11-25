@@ -72,14 +72,19 @@
 
   const Logo = ({ pequeno = false } = {}) => `<h1 class="logo${pequeno ? " logo--pequeno" : ""}">Confia<em>?</em></h1>`;
 
-  const Capa = ({ emocao, conteudo, logoPequeno = false }) => `
+  const Capa = ({ emocao, conteudo, logoPequeno = false, rodape = "" }) => `
     <div class="tela">
       <main class="capa">
         ${Logo({ pequeno: logoPequeno })}
         <img class="capa__img" src="${PASTA_BISCOITINHO}${emocao}.png" alt="Biscoitinho, ${emocao}">
         ${conteudo}
       </main>
+      ${rodape ? `<footer class="rodape">${rodape}</footer>` : ""}
     </div>`;
+
+  const Creditos = (autores, licenca) => `
+    <p class="rodape__autores">${autores.map(esc).join(" · ")}</p>
+    <p class="rodape__licenca">Instituto Metrópole Digital · Universidade Federal do Rio Grande do Norte · <a href="${esc(licenca.url)}" target="_blank" rel="noopener">${esc(licenca.nome)}</a></p>`;
 
   const Carregando = (pct) => `
     <div class="carregando" role="progressbar" aria-label="Carregando" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${+pct}">
@@ -89,5 +94,5 @@
 
   const Dica = (texto) => `<p class="dica"><b>Dica:</b> ${esc(texto)}</p>`;
 
-  window.Confia = { esc, Tela, Topo, Card, Titulo, Texto, Mensagem, Endereco, Biscoitinho, Botao, Escolhas, Campo, Etiqueta, Lista, Medidor, Logo, Capa, Carregando, Dica, EMOCOES };
+  window.Confia = { esc, Tela, Topo, Card, Titulo, Texto, Mensagem, Endereco, Biscoitinho, Botao, Escolhas, Campo, Etiqueta, Lista, Medidor, Logo, Capa, Creditos, Carregando, Dica, EMOCOES };
 })();
