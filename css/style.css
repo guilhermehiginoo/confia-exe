@@ -375,7 +375,9 @@ img {
 }
 
 .capa__frase {
-  font: 600 15px var(--fonte-texto);
+  font: 700 19px/1.25 var(--fonte-titulo);
+  max-width: 22ch;
+  text-wrap: balance;
   margin: 0;
 }
 
@@ -624,17 +626,36 @@ img {
     font-size: 30px;
   }
 
+  /* Capa: logo, frase e botões à esquerda; Biscoitinho grande à direita. */
   .capa {
-    grid-auto-flow: column;
-    grid-template-columns: auto auto;
-    gap: 24px 72px;
+    grid-template-columns: minmax(0, 520px) auto;
+    align-content: center;
+    justify-content: center;
+    gap: 32px 96px;
     text-align: left;
     justify-items: start;
   }
 
+  .capa>* {
+    grid-column: 1;
+  }
+
   .capa__img {
-    grid-row: span 4;
-    width: 340px;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: center;
+    width: 400px;
+  }
+
+  .capa__frase {
+    font: 700 30px/1.15 var(--fonte-titulo);
+    max-width: 16ch;
+  }
+
+  .capa__acoes {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    max-width: 440px;
   }
 
   .logo {
@@ -647,6 +668,19 @@ img {
 
   .dica {
     font-size: 18px;
+  }
+}
+
+/* O Biscoitinho da capa respira: parece vivo antes do jogo começar. */
+@media (prefers-reduced-motion: no-preference) {
+  .capa__img {
+    animation: flutuar 3.2s ease-in-out infinite;
+  }
+}
+
+@keyframes flutuar {
+  50% {
+    transform: translateY(-10px) rotate(2deg);
   }
 }
 
